@@ -24,6 +24,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject creditsPanelGameObject;
     [SerializeField] public GameObject grayOutPanel;
     [SerializeField] public GameObject mainMenuImage;
+    [SerializeField] public GameObject exitPanelGameObject;
     [Header("==== Another Scripts ====")]
     [Space(10)]
     [SerializeField] private SettingsPanelController settingsPanelController;
@@ -32,6 +33,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private ResulationPanel resulationPanel;
     [SerializeField] private ControlsPanel controlsPanel;
     [SerializeField] private Credits creditsPanel;
+    [SerializeField] private ExitPanel exitPanel;
     [Header("==== Anothers ====")]
     [Space(10)]
     [SerializeField] private string nextSceneName;
@@ -62,7 +64,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void HandleMainMenuPanelInput()
     {
-        if (!settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             Button selectedButton = buttons[currentIndex];
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -150,7 +152,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Play()
     {
-        if (!settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             SceneManager.LoadScene(nextSceneName);
@@ -164,7 +166,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Settings()
     {
-        if (!settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             mainMenuImage.SetActive(false);
@@ -192,7 +194,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Extras()
     {
-        if (!settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             creditsPanelGameObject.SetActive(true);
@@ -216,11 +218,23 @@ public class MainMenuController : MonoBehaviour
 
     public void Exit()
     {
-        if (!settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
-            AudioManager.Instance.PlaySFX("InterfaceBACK");
-            //Application.Quit();
-            Debug.Log("Quit");
+            AudioManager.Instance.PlaySFX("InterfaceGO");
+            exitPanelGameObject.SetActive(true);
+            exitPanel.inExitPanel = true;
+            grayOutPanel.SetActive(true);
+            inMainMenu = false;
+            mainMenuImage.SetActive(false);
+        }
+        if (!inMainMenu)
+        {
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        if (exitPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
         }
         else
         {

@@ -1,3 +1,5 @@
+using Cinemachine;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,11 +7,14 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    private int currHealth;
-    [SerializeField] private Slider healthSlider;
+    public int currHealth;
+    [SerializeField] public Slider healthSlider;
     [SerializeField] private Animator TakeHit;
     [SerializeField] private Animator TakeHitTwo;
-    [SerializeField] private Animator startGame;
+    [SerializeField] private GameObject enemySpawner;
+    [SerializeField] private GameObject[] enemyObjects;
+
+    public CinemachineVirtualCamera vcam;
 
     public Gradient gradient;
 
@@ -17,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
     {
         currHealth = maxHealth;
         UpdateHealthBar();
-        startGame.Play("ShowHpBarAnimation");
     }
 
     public void TakeDamage(int damage)
@@ -41,9 +45,56 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Die()
     {
-        Destroy(gameObject);
+        foreach (GameObject enemyObject in enemyObjects)
+        {
+            Enemy enemy = enemyObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.enabled = false;
+            }
+        }
+        Destroy(enemySpawner);
+        // Change player tag and layer order
+        gameObject.tag = "Untagged";
+        StartCoroutine(ShakeAndDestroy());
         AudioManager.Instance.backgroundMusicSource.Stop();
         AudioManager.Instance.PlaySFX("YouDie");
+
+
+        StartCoroutine(ZoomInCamera(2f, 1f));
+
+    }
+    private IEnumerator ShakeAndDestroy()
+    {
+        float shakeDuration = 0.5f;
+        float shakeIntensity = 0.2f;
+
+        Vector3 startPosition = transform.position;
+
+        while (shakeDuration > 0)
+        {
+            transform.position = startPosition + Random.insideUnitSphere * shakeIntensity;
+            shakeDuration -= Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(gameObject);
+    }
+
+    private IEnumerator ZoomInCamera(float targetOrthoSize, float duration)
+    {
+        float startOrthoSize = vcam.m_Lens.OrthographicSize;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(startOrthoSize, targetOrthoSize, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        vcam.m_Lens.OrthographicSize = targetOrthoSize; // set the final value
     }
 
 }

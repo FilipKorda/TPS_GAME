@@ -116,17 +116,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4531103414853522886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f61870159b99d5418dd9e85c87a8336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  damage: 5
+  damageToPlayer: 1
   amountOfDamagePrefab: {fileID: 5347926975919826748, guid: 6782a01e1ce2d014ab2a3ddf610b7665, type: 3}
   objectToDrop: {fileID: 880686741995913652, guid: 191efce91e0eca040be121ff5dd882e5, type: 3}
   canvas: {fileID: 4531103415707577109}
-  experienceSystem: {fileID: 418646506, guid: f18701a6b048dc94a9f6c03b25dd7b6e, type: 3}
 --- !u!114 &2081303388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +143,7 @@ MonoBehaviour:
   distanceThreshold: 0.5
   wanderRadius: 2
   wanderJitter: 0.2
+  playerHealth: {fileID: 418646501, guid: f18701a6b048dc94a9f6c03b25dd7b6e, type: 3}
 --- !u!1 &4531103415707577104
 GameObject:
   m_ObjectHideFlags: 0

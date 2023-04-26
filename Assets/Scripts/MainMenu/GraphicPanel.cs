@@ -47,7 +47,6 @@ public class GraphicPanel : MonoBehaviour
         HandleGraphicPanelInput();
         SetButtonToFirstS();
     }
-
     public void SetButtonToFirstS()
     {
         if (inGraphicPanel)
