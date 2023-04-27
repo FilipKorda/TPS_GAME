@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _bulletTrail;
     [SerializeField] private float _weaponrange = 10f;
     [SerializeField] private Animator _mussleFlashAnimator;
-
     [SerializeField] public float _timeBetweenShots = 0.5f;
     public bool LookAtMouseEnabled = true;
     private float _timeSinceLastShot = 0f;
+
+    [SerializeField] public GameManager gameManager;
+
 
     void Start()
     {
@@ -72,6 +74,8 @@ public class PlayerController : MonoBehaviour
                 if (hittable != null)
                 {
                     hittable.ReceiveHit(hit);
+                    gameManager.numKills++; // zwiêksza wartoœæ licznika zabójstw o 1, jeœli przeciwnik zosta³ zabity
+
                 }
             }
             else

@@ -17,9 +17,12 @@ public class ExperienceSystem : MonoBehaviour
     [SerializeField] private GameObject levelUpParticles;
     [SerializeField] private PlayerController playerController;
 
-    //Increase damage
+    //Increase damage tu masz damage który mo¿esz w UI wyœwietliæ
     public int baseDamage = 1;
     public float damageIncreaseFactor = 0.1f;
+
+    //SelectionTab
+    [SerializeField] private GameObject selectionTab;
 
     private void Start()
     {
@@ -46,8 +49,13 @@ public class ExperienceSystem : MonoBehaviour
         currentLevel++;
         currentXP -= xpToNextLevel;
         levelUp.SetTrigger("LevelUp");
-        GameObject particles = Instantiate(levelUpParticles, transform.position, Quaternion.identity);
+
+        //Show selectionTab for choose upgrade
+        selectionTab.SetActive(true);
+        Time.timeScale = 0f;
+
         // Play the particle system
+        GameObject particles = Instantiate(levelUpParticles, transform.position, Quaternion.identity);       
         particles.GetComponent<ParticleSystem>().Play();
         xpToNextLevel *= 2;
 

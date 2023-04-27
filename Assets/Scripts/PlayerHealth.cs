@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Animator TakeHitTwo;
     [SerializeField] private GameObject enemySpawner;
     [SerializeField] private GameObject[] enemyObjects;
+    [SerializeField] private GameManager gameManager;
 
     public CinemachineVirtualCamera vcam;
 
@@ -45,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Die()
     {
+        
         foreach (GameObject enemyObject in enemyObjects)
         {
             Enemy enemy = enemyObject.GetComponent<Enemy>();
@@ -62,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
 
 
         StartCoroutine(ZoomInCamera(2f, 1f));
-
+        gameManager.StopTimer();
     }
     private IEnumerator ShakeAndDestroy()
     {

@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f61870159b99d5418dd9e85c87a8336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 1
   damageToPlayer: 1
   amountOfDamagePrefab: {fileID: 5347926975919826748, guid: 6782a01e1ce2d014ab2a3ddf610b7665, type: 3}
   objectToDrop: {fileID: 880686741995913652, guid: 191efce91e0eca040be121ff5dd882e5, type: 3}
