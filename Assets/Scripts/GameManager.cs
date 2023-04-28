@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Animator startGame;
     [SerializeField] public int numKills;
+    [SerializeField] public GameObject summaryPanel;
+    [SerializeField] public TrackPlayerStats trackPlayerStats;
 
     public TextMeshProUGUI timerText;
     private float elapsedTime;
@@ -52,4 +54,10 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+
+    public void ShowSummaryPanel()
+    {
+        summaryPanel.SetActive(true); // activate the summary panel
+        trackPlayerStats.UpdateStatsDisplay(); // update the stats in the summary panel
+    }
 }

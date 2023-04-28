@@ -65,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
 
         StartCoroutine(ZoomInCamera(2f, 1f));
         gameManager.StopTimer();
+        gameManager.ShowSummaryPanel();
     }
     private IEnumerator ShakeAndDestroy()
     {

@@ -40,7 +40,6 @@ public class MainMenuController : MonoBehaviour
     private int currentIndex = 0;
     private bool inSettingsPanel = false;
     public bool inMainMenu = false;
-
     private bool isMouseOverButton = false;
 
     private void Start()

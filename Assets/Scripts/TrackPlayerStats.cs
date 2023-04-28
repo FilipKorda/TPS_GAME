@@ -27,4 +27,5 @@ public class TrackPlayerStats : MonoBehaviour
         timerText.text = gameManager.timerText.text;
     }
 
+
 }
