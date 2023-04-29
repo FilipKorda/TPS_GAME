@@ -43,8 +43,14 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        rb.velocity = input.normalized * moveSpeed;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, input.normalized, input.magnitude * moveSpeed * Time.deltaTime);
+
+        if (hit.collider == null || !hit.collider.CompareTag("Obstacle"))
+        {
+            rb.velocity = input.normalized * moveSpeed;
+        }
     }
+
 
     private void Shoot()
     {

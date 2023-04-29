@@ -44,15 +44,9 @@ public class ExperienceSystem : MonoBehaviour
 
     private void LevelUp()
     {
-
         currentLevel++;
         currentXP -= xpToNextLevel;
         levelUp.SetTrigger("LevelUp");
-        //Show selectionTab for choose upgrade
-        Time.timeScale = 0f;
-
-
-
 
         // Play the particle system
         GameObject particles = Instantiate(levelUpParticles, transform.position, Quaternion.identity);

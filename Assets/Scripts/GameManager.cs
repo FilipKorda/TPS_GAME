@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI timerText;
     private float elapsedTime;
-    private bool isTimerRunning;
+    public bool isTimerRunning;
 
 
     private void Start()

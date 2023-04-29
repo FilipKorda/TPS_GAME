@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1625472404133994905}
   - component: {fileID: 418646501}
   - component: {fileID: 418646506}
+  - component: {fileID: 1979009778}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 1625472404580485867}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1625472404133994907
 SpriteRenderer:
@@ -145,11 +146,8 @@ MonoBehaviour:
   _weaponrange: 10
   _mussleFlashAnimator: {fileID: 1625472405406876739}
   _timeBetweenShots: 1.5
-  shootSounds:
-  - {fileID: 8300000, guid: 337dc39be87331d448833fd867a43a0d, type: 3}
-  - {fileID: 8300000, guid: b9c7d0ac9feab7242a8e9b744b23a2e0, type: 3}
-  - {fileID: 8300000, guid: 59981f6011014194b9d1a1b31b197843, type: 3}
-  - {fileID: 8300000, guid: f01da60c64cecc94d919198f14f24754, type: 3}
+  LookAtMouseEnabled: 1
+  gameManager: {fileID: 0}
 --- !u!114 &418646501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,11 +160,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b7ce8cb69f83a46ab54a702006b093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 1
+  currHealth: 0
   healthSlider: {fileID: 0}
   TakeHit: {fileID: 0}
   TakeHitTwo: {fileID: 0}
-  startGame: {fileID: 0}
+  enemySpawner: {fileID: 0}
+  enemyObjects:
+  - {fileID: 4043539082143527653, guid: 749ba09cb48c77242b5797d6343e7a6a, type: 3}
+  - {fileID: 4531103414853522886, guid: 9cdafe6add4dd8c42a5c1e3fdaeacc65, type: 3}
+  gameManager: {fileID: 0}
+  vcam: {fileID: 0}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.2216981, b: 0.2216981, a: 1}
@@ -210,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevel: 0
   currentXP: 0
-  xpToNextLevel: 50
+  xpToNextLevel: 10
   levelText: {fileID: 0}
   xpSlider: {fileID: 0}
   gradient:
@@ -247,6 +251,22 @@ MonoBehaviour:
   playerController: {fileID: 1625472404133994905}
   baseDamage: 1
   damageIncreaseFactor: 0.6
+--- !u!114 &1979009778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625472404133994906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf27736eb52676b4c97da38966302b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 2
+  interactKey: 101
+  descriptionText: {fileID: 0}
+  spriteImage: {fileID: 0}
 --- !u!1 &1625472404580485866
 GameObject:
   m_ObjectHideFlags: 0
