@@ -1,37 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TeleportationToItemRoom : MonoBehaviour
+public class TeleportToTheGameField : MonoBehaviour
 {
     public Transform teleportTarget;
     public GameObject player;
+    public GameObject teleport;
     private bool canTeleport = false;
+
+    private float fadeDuration = 0.3f;
+    private float fadeDelay = 1f;
+    public Image FadeOutInPanelImage;
     public string description = "Press E to teleport";
     public TextMeshProUGUI descriptionText;
 
-    //Fade Out and In
-    private float fadeDuration = 0.3f;
-    private float fadeDelay = 1f;
-    public Image fadeOutInPanelImage;
-
-    [SerializeField] public List<GameObject> list1;
-    [SerializeField] public List<GameObject> list2;
-    [SerializeField] public List<GameObject> list3;
 
     void Start()
     {
-        fadeOutInPanelImage.color = new Color(0, 0, 0, 0);
-    }
-    private GameObject[] GetRandomObjectsFromLists()
-    {
-        GameObject[] result = new GameObject[3];
-        result[0] = list1[Random.Range(0, list1.Count)];
-        result[1] = list2[Random.Range(0, list2.Count)];
-        result[2] = list3[Random.Range(0, list3.Count)];
-        return result;
+        FadeOutInPanelImage.color = new Color(0, 0, 0, 0);
+        teleport.SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -57,10 +48,6 @@ public class TeleportationToItemRoom : MonoBehaviour
             StartCoroutine(Teleport());
         }
     }
-    public void CleanUpList(List<GameObject> list)
-    {
-        list.RemoveAll(item => item == null);
-    }
     IEnumerator Teleport()
     {
         Time.timeScale = 0;
@@ -69,14 +56,12 @@ public class TeleportationToItemRoom : MonoBehaviour
         while (t < fadeDuration)
         {
             float alpha = Mathf.Lerp(0, 1f, t / fadeDuration);
-            fadeOutInPanelImage.color = new Color(0, 0, 0, alpha);
+            FadeOutInPanelImage.color = new Color(0, 0, 0, alpha);
             t += Time.unscaledDeltaTime;
             yield return null;
         }
-        fadeOutInPanelImage.color = new Color(0, 0, 0, 1f);
-        //losowanie itemów do pojawienia
-        GameObject[] randomObjects = GetRandomObjectsFromLists();
-        //koniec losowania itemów
+        FadeOutInPanelImage.color = new Color(0, 0, 0, 1f);
+
         player.transform.position = teleportTarget.position;
         Time.timeScale = 1;
         yield return new WaitForSecondsRealtime(fadeDelay);
@@ -85,16 +70,11 @@ public class TeleportationToItemRoom : MonoBehaviour
         while (t < fadeDuration)
         {
             float alpha = Mathf.Lerp(1f, 0, t / fadeDuration);
-            fadeOutInPanelImage.color = new Color(0, 0, 0, alpha);
+            FadeOutInPanelImage.color = new Color(0, 0, 0, alpha);
             t += Time.unscaledDeltaTime;
             yield return null;
         }
-        fadeOutInPanelImage.color = new Color(0, 0, 0, 0);
-
-        foreach (GameObject obj in randomObjects)
-        {
-            obj.SetActive(true);
-        }
-
+        FadeOutInPanelImage.color = new Color(0, 0, 0, 0);
+        teleport.SetActive(false);
     }
 }

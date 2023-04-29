@@ -1,13 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using TMPro;
 using UnityEngine;
-using UnityEngine.U2D;
 
 public class PickupableObject : MonoBehaviour, IPickupable
 {
-    public string description = "This is a pickupable object.";
+    public string[] description = { "This is a pickupable object." };
     public Sprite sprite;
+
+    //Tytu³
+    public string title = "Title";
+    public VertexGradient titleColor;
+    
 
 
     public void OnPickup()
@@ -25,14 +27,17 @@ public class PickupableObject : MonoBehaviour, IPickupable
         // Do the pickup action for the selected object
         Debug.Log("Masz upgrade tego: " + gameObject.name);
     }
-
-    public string GetDescription()
+    public string[] GetDescription()
     {
         return description;
     }
-
+    public string GetTitle()
+    {
+        return title;
+    }
     public Sprite GetSprite()
     {
         return sprite;
     }
+
 }
