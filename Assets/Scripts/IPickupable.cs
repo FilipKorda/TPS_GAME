@@ -7,6 +7,4 @@ public interface IPickupable
     string[] GetDescription();
     string GetTitle();
     Sprite GetSprite();
-
-
 }

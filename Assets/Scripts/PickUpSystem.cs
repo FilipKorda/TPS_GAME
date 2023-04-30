@@ -9,21 +9,17 @@ public class PickUpSystem : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI titleText;
-    public Gradient titleColor;
     public Image spriteImage;
     private GameObject currentObject;
     public TeleportationToItemRoom teleportationToItemRoom;
     public TeleportToTheGameField teleportToTheGameField;
     public GameObject particleSpawnEffect;
 
-    void Start()
+
+    private void Start()
     {
+       
         spriteImage.gameObject.SetActive(false);
-
-        VertexGradient vertexGradient = new VertexGradient(titleColor.Evaluate(0f), titleColor.Evaluate(1f), Color.white, Color.white);
-
-        // przypisz utworzony obiekt do w³aœciwoœci colorGradient obiektu TextMeshProUGUI
-        titleText.colorGradient = vertexGradient;
     }
 
     void Update()
@@ -38,16 +34,13 @@ public class PickUpSystem : MonoBehaviour
                     //poka¿ teleport
                     StartCoroutine(ShowTeleportAfterDelay(2f));
                     pickupable.OnPickup();
-                    descriptionText.text = string.Join("\n", pickupable.GetDescription());
+                    descriptionText.text = "";
                     titleText.text = "";
-                    spriteImage.sprite = null;
-                    
+                    spriteImage.sprite = null;                   
                     spriteImage.gameObject.SetActive(false);
                     teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list1);
                     teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list2);
-                    teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list3);
-
-                    
+                    teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list3);                  
                 }
             }
         }
@@ -61,17 +54,10 @@ public class PickUpSystem : MonoBehaviour
             IPickupable pickupable = currentObject.GetComponent<IPickupable>();
             if (pickupable != null)
             {
-                titleText.text = pickupable.GetTitle();
-                PickupableObject pickupableObject = currentObject.GetComponent<PickupableObject>();
-                if (pickupableObject != null)
-                {
-                    titleText.colorGradient = pickupableObject.titleColor;
-                }
                 descriptionText.text = string.Join("\n", pickupable.GetDescription());
+                titleText.text = pickupable.GetTitle();
                 spriteImage.sprite = pickupable.GetSprite();
                 spriteImage.gameObject.SetActive(true);
-
-
             }
         }
     }
@@ -82,6 +68,7 @@ public class PickUpSystem : MonoBehaviour
         {
             currentObject = null;
             descriptionText.text = "";
+            titleText.text = "";
             spriteImage.sprite = null;
             spriteImage.gameObject.SetActive(false);
         }
@@ -91,8 +78,8 @@ public class PickUpSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         teleportToTheGameField.teleport.SetActive(true);
-        Instantiate(particleSpawnEffect, teleportToTheGameField.teleport.transform.position, Quaternion.identity);
-
+        GameObject particleSpawn = Instantiate(particleSpawnEffect, teleportToTheGameField.teleport.transform.position, Quaternion.identity);
+        Destroy(particleSpawn, delay);
     }
 
 }

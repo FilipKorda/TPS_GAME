@@ -8,7 +8,7 @@ public class ExperienceSystem : MonoBehaviour
     public int currentLevel = 0;
     public int currentXP = 0;
     public int xpToNextLevel = 100;
-
+    private float particleLifetime = 2f;
     public TextMeshProUGUI levelText;
     public Slider xpSlider;
 
@@ -52,7 +52,7 @@ public class ExperienceSystem : MonoBehaviour
         GameObject particles = Instantiate(levelUpParticles, transform.position, Quaternion.identity);
         particles.GetComponent<ParticleSystem>().Play();
         xpToNextLevel *= 2;
-
+        Destroy(particles.gameObject, particleLifetime);
         //Increase damage
         int previousDamage = Mathf.RoundToInt(baseDamage * Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 2));
         int newDamage = Mathf.RoundToInt(baseDamage * Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 1));
