@@ -33,10 +33,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private ResulationPanel resulationPanel;
     [SerializeField] private ControlsPanel controlsPanel;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private SumaryScreen sumaryScreen;
     [SerializeField] private ExitPanel exitPanel;
     [Header("==== Anothers ====")]
     [Space(10)]
-    [SerializeField] private string mainMenuScene;
     private int currentIndex = 0;
     public bool inPauseMenu = false;
     public static bool gamePaused = false;
@@ -48,7 +48,6 @@ public class PauseMenu : MonoBehaviour
     }
     public void Update()
     {
-        OnPauseMenu();
         HandleMainMenuPanelInput();
         SetButtonToFirst();
     }
@@ -62,7 +61,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void HandleMainMenuPanelInput()
     {
-        if (!exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             Button selectedButton = buttons[currentIndex];
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -110,7 +109,7 @@ public class PauseMenu : MonoBehaviour
                     }
 
                 }
-                if (!anyButtonHovered) // if no button is hovered, set the boolean to false
+                if (!anyButtonHovered)
                 {
                     isMouseOverButton = false;
                 }
@@ -129,7 +128,6 @@ public class PauseMenu : MonoBehaviour
         Button selectedButton = buttons[currentIndex];
         if (Input.GetKeyDown(KeyCode.X))
         {
-
             if (selectedButton == resumeButton)
             {
                 resumeButton.onClick.Invoke();
@@ -156,23 +154,8 @@ public class PauseMenu : MonoBehaviour
     {
         GameObject attachedObject = button.gameObject.transform.GetChild(0).gameObject;
         attachedObject.SetActive(state);
-    }
-    private void OnPauseMenu()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (inPauseMenu)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
-        }
-    }
-
-    private void PauseGame()
+    }    
+    public void PauseGame()
     {
         hPExpGameObject.SetActive(false);
         Time.timeScale = 0f;
@@ -203,7 +186,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnButtonClickAudioGame()
     {
-        if (!exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             grayOutPanel.SetActive(true);
@@ -214,11 +197,12 @@ public class PauseMenu : MonoBehaviour
             {
                 ToggleAttachedObject(buttons[currentIndex], false);
             }
-            if (audioPanelGameObject.activeSelf == true)
-            {
-                currentIndex = 0;
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
+            
+        }
+        if (audioPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
         }
         else
         {
@@ -227,7 +211,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnButtonClickGraphicGame()
     {
-        if (!exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             grayOutPanel.SetActive(true);
@@ -238,11 +222,12 @@ public class PauseMenu : MonoBehaviour
             {
                 ToggleAttachedObject(buttons[currentIndex], false);
             }
-            if (graphicPanelGameObject.activeSelf == true)
-            {
-                currentIndex = 0;
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
+            
+        }
+        if (graphicPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
         }
         else
         {
@@ -252,7 +237,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnButtonClickControlsGame()
     {
-        if (!exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             grayOutPanel.SetActive(true);
@@ -263,11 +248,12 @@ public class PauseMenu : MonoBehaviour
             {
                 ToggleAttachedObject(buttons[currentIndex], false);
             }
-            if (controlPanelGameObject.activeSelf == true)
-            {
-                currentIndex = 0;
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
+            
+        }
+        if (controlPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
         }
         else
         {
@@ -276,7 +262,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnButtonClickQuitGame()
     {
-        if (!exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceBACK");
             Debug.Log("Quit");
@@ -289,11 +275,12 @@ public class PauseMenu : MonoBehaviour
             {
                 ToggleAttachedObject(buttons[currentIndex], false);
             }
-            if (exitPanelGameObject.activeSelf == true)
-            {
-                currentIndex = 0;
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
+            
+        }
+        if (exitPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
         }
     }
 }

@@ -21,6 +21,7 @@ public class ExperienceSystem : MonoBehaviour
     public int baseDamage = 1;
     public float damageIncreaseFactor = 0.1f;
 
+    public int NewDamage { get; private set; }
 
     private void Start()
     {
@@ -56,6 +57,7 @@ public class ExperienceSystem : MonoBehaviour
         //Increase damage
         int previousDamage = Mathf.RoundToInt(baseDamage * Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 2));
         int newDamage = Mathf.RoundToInt(baseDamage * Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 1));
+        NewDamage = newDamage;
         int damageIncrease = newDamage - previousDamage;
         Debug.Log($"Damage increased by {damageIncrease} after leveling up to level {currentLevel}");
 

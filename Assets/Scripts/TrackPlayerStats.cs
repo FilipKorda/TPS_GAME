@@ -23,7 +23,7 @@ public class TrackPlayerStats : MonoBehaviour
     {
         killsText.text = "" + gameManager.numKills.ToString();
         currentLevel.text = "" + experienceSystem.currentLevel.ToString();
-        damage.text = "" + experienceSystem.baseDamage.ToString();
+        damage.text = "" + experienceSystem.NewDamage.ToString();
         timerText.text = gameManager.timerText.text;
     }
 

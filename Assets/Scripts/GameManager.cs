@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int numKills;
     [SerializeField] public GameObject summaryPanel;
     [SerializeField] public TrackPlayerStats trackPlayerStats;
+    [SerializeField] public SumaryScreen sumaryScreen;
 
     public TextMeshProUGUI timerText;
     private float elapsedTime;
     public bool isTimerRunning;
+
 
 
     private void Start()
@@ -50,14 +52,34 @@ public class GameManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(elapsedTime / 60f);
         float seconds = Mathf.FloorToInt(elapsedTime % 60f);
 
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        int minutesInt = (int)minutes;
+        int secondsInt = (int)seconds;
+
+        timerText.text = string.Format("{0:00}:{1:00}", minutesInt, secondsInt);
     }
     #endregion
 
-
     public void ShowSummaryPanel()
     {
-        summaryPanel.SetActive(true); // activate the summary panel
-        trackPlayerStats.UpdateStatsDisplay(); // update the stats in the summary panel
+        sumaryScreen.isSumaryScreenOpen = true;
+        summaryPanel.SetActive(true);
+        summaryPanel.transform.localScale = Vector3.one * 0.1f;
+        StartCoroutine(ScaleUp());
+    }
+    private IEnumerator ScaleUp()
+    {
+        Vector3 targetScale = Vector3.one; 
+        float duration = 5f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            summaryPanel.transform.localScale = Vector3.Lerp(summaryPanel.transform.localScale, targetScale, t);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        summaryPanel.transform.localScale = targetScale;
     }
 }

@@ -10,7 +10,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
     public string title = "Title";
     public Color titleColor = Color.white;
 
-    public float particleLifetime = 2.0f;
+    private float particleLifetime = 2.0f;
     public GameObject destroyParticles; // Reference to the first particle system
     public GameObject pickupParticles;
 

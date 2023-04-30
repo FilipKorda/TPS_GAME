@@ -107,12 +107,12 @@ public class MainMenuController : MonoBehaviour
                         ToggleAttachedObject(selectedButton, true);
                         break;
                     }
-                    
+
                 }
-                if (!anyButtonHovered) // if no button is hovered, set the boolean to false
+                if (!anyButtonHovered)
                 {
                     isMouseOverButton = false;
-                }              
+                }
             }
             else
             {

@@ -82,6 +82,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         Destroy(gameObject);
+        //gameObject.SetActive(false);
     }
 
     private IEnumerator ZoomInCamera(float targetOrthoSize, float duration)
