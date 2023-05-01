@@ -15,14 +15,10 @@ public class Credits : MonoBehaviour
     public float groupFontSize = 30f;
     public bool isCreditsScrollFinished = false;
     private Vector2 originalPos;
-
     public Image fadeOutPanel;
     private Color originalPanelColor;
-
     public bool inCreditsPanel = false;
-
     [SerializeField] private MainMenuController mainMenuController;
-
     [Header("==== GROUPS AND NAMES ====")]
     [Space(10)]
     public List<string> groups = new List<string>() { "Group 1", "Group 2", "Group 3" };
@@ -42,23 +38,6 @@ public class Credits : MonoBehaviour
          new NamesList() { names = new List<string>() { "Name 8", "Name 9" } },
          new NamesList() { names = new List<string>() { "Name 10", "Name 11" } }
     };
-
-   /* [Header("==== Images Description ====")]
-    [Space(10)]
-    public List<string> imagesDescription = new List<string>();
-
-    [Serializable]
-    public class SpritesList
-    {
-        public List<Sprite> imagesDescription = new List<Sprite>();
-    }
-    [SerializeField]
-    private List<SpritesList> sprites = new List<SpritesList>()
-    {
-         new SpritesList() { imagesDescription = new List<Sprite>() { } },       
-    };*/
-
-
 
     void Start()
     {
@@ -80,18 +59,13 @@ public class Credits : MonoBehaviour
             }        
 
         }
-        creditsText.text = credits;
-
-        
+        creditsText.text = credits;      
 
     }
-
-
     IEnumerator FadeOutPanel()
     {
         float duration = 1f;
         float currentTime = 0f;
-
         while (currentTime < duration)
         {
             float alpha = Mathf.Lerp(1f, 0f, currentTime / duration);
@@ -99,7 +73,6 @@ public class Credits : MonoBehaviour
             currentTime += Time.deltaTime;
             yield return null;
         }
-
         fadeOutPanel.color = originalPanelColor;
         inCreditsPanel = false;
         mainMenuController.inMainMenu = true;
@@ -107,10 +80,8 @@ public class Credits : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
     private void Update()
     {
-
         creditsText.transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
         if (creditsText.rectTransform.anchoredPosition.y >= creditsHeight)
         {
@@ -122,9 +93,6 @@ public class Credits : MonoBehaviour
         {
             creditsText.rectTransform.anchoredPosition = originalPos;
             StartCoroutine(FadeOutPanel());
-        }
-        
+        }        
     }
-
-
 }

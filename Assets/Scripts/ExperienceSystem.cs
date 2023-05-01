@@ -15,12 +15,11 @@ public class ExperienceSystem : MonoBehaviour
     public Gradient gradient;
     [SerializeField] private Animator levelUp;
     [SerializeField] private GameObject levelUpParticles;
-    [SerializeField] private PlayerController playerController;
 
-    //Increase damage tu masz damage który mo¿esz w UI wyœwietliæ
+    
     public int baseDamage = 1;
     public float damageIncreaseFactor = 0.1f;
-
+    //Increase damage tu masz damage który mo¿esz w UI wyœwietliæ
     public int NewDamage { get; private set; }
 
     private void Start()
@@ -29,7 +28,7 @@ public class ExperienceSystem : MonoBehaviour
     }
     public int GetDamage()
     {
-        return Mathf.RoundToInt(baseDamage * Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 1));
+        return Mathf.RoundToInt(baseDamage + Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 1));
     }
 
     public void AddXP(int xpAmount)
@@ -55,14 +54,11 @@ public class ExperienceSystem : MonoBehaviour
         xpToNextLevel *= 2;
         Destroy(particles.gameObject, particleLifetime);
         //Increase damage
-        int previousDamage = Mathf.RoundToInt(baseDamage * Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 2));
-        int newDamage = Mathf.RoundToInt(baseDamage * Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 1));
+        int previousDamage = Mathf.RoundToInt(baseDamage + Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 2));
+        int newDamage = Mathf.RoundToInt(baseDamage + Mathf.Pow(1 + damageIncreaseFactor, currentLevel - 1));
         NewDamage = newDamage;
         int damageIncrease = newDamage - previousDamage;
         Debug.Log($"Damage increased by {damageIncrease} after leveling up to level {currentLevel}");
-
-        //Increase  TimeBetweenShots
-        playerController._timeBetweenShots *= 0.5f;
     }
 
     private void UpdateUI()

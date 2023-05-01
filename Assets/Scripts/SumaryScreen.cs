@@ -21,18 +21,21 @@ public class SumaryScreen : MonoBehaviour
     public TextMeshProUGUI currentLevel;
     public TextMeshProUGUI damage;
     public TextMeshProUGUI timerText;
-    public TextMeshProUGUI totalScore;  
-    public GameObject sumaryPanel;  
+    public TextMeshProUGUI totalScore;
+    public GameObject sumaryPanel;
     [Header("==== Another Scripts ====")]
     [Space(10)]
     [SerializeField] private GameManager gameManager;
     [SerializeField] private ExperienceSystem experienceSystem;
     [Header("==== Anothers ====")]
     [Space(10)]
-   // [SerializeField] private string mainMenuScene;
     public bool isSumaryScreenOpen = false;
     private int currentIndex = 0;
     private bool isMouseOverButton = false;
+
+    private float delay = 1f;
+    private int currentIndexTextMeshPro = 0;
+
 
 
     void Update()
@@ -42,7 +45,7 @@ public class SumaryScreen : MonoBehaviour
         SetButtonToFirst();
     }
     private int GetTimeInSeconds()
-    {    
+    {
         int minutes = int.Parse(gameManager.timerText.text[..2]);
         int seconds = int.Parse(gameManager.timerText.text.Substring(3, 2));
         return minutes * 60 + seconds;
@@ -50,16 +53,43 @@ public class SumaryScreen : MonoBehaviour
     public void UpdateStatsDisplay()
     {
         killsText.text = "" + gameManager.numKills.ToString();
-        damage.text = "" + experienceSystem.NewDamage.ToString();
+        damage.text = "" + (experienceSystem.NewDamage + experienceSystem.baseDamage - 1).ToString();
         currentLevel.text = "" + experienceSystem.currentLevel.ToString();
         timerText.text = gameManager.timerText.text;
-        int score = (gameManager.numKills + experienceSystem.currentLevel) * 2 + (experienceSystem.NewDamage + experienceSystem.currentXP) * 2 + experienceSystem.xpToNextLevel / 2 + GetTimeInSeconds();
+        int score = (gameManager.numKills + experienceSystem.currentLevel) * 2 + ((experienceSystem.NewDamage + experienceSystem.baseDamage - 1) + experienceSystem.currentXP) * 2 + experienceSystem.xpToNextLevel / 2 + GetTimeInSeconds();
         if (score < 0)
         {
             score = 0;
         }
         totalScore.text = score.ToString();
+        StartShowingText();
     }
+    public void StartShowingText()
+    {
+        if (isSumaryScreenOpen)
+        {
+            InvokeRepeating("ShowNextTextMeshProUGUI", delay, delay);
+        }
+    }
+    private void ShowNextTextMeshProUGUI()
+    {
+        if (currentIndexTextMeshPro < transform.childCount)
+        {
+            StartCoroutine(ShowTextWithDelay(transform.GetChild(currentIndexTextMeshPro).gameObject, delay * currentIndexTextMeshPro));
+            currentIndexTextMeshPro++;
+        }
+        else
+        {
+            CancelInvoke("ShowNextTextMeshProUGUI");
+        }
+    }
+    private IEnumerator ShowTextWithDelay(GameObject textObject, float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        textObject.SetActive(true);
+    }
+
+    #region
     public void SetButtonToFirst()
     {
         if (isSumaryScreenOpen)
@@ -161,7 +191,8 @@ public class SumaryScreen : MonoBehaviour
             {
                 continueButton.onClick.Invoke();
             }
-            
+
         }
     }
+    #endregion
 }

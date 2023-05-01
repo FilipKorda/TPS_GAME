@@ -63,7 +63,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void HandleMainMenuPanelInput()
     {
-        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel && !creditsPanel.inCreditsPanel)
         {
             Button selectedButton = buttons[currentIndex];
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -75,7 +75,6 @@ public class MainMenuController : MonoBehaviour
                 {
                     currentIndex = buttons.Length - 1;
                 }
-
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -151,7 +150,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Play()
     {
-        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel && !creditsPanel.inCreditsPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             SceneManager.LoadScene(nextSceneName);
@@ -165,7 +164,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Settings()
     {
-        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel && !creditsPanel.inCreditsPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             mainMenuImage.SetActive(false);
@@ -174,11 +173,12 @@ public class MainMenuController : MonoBehaviour
             inMainMenu = false;
             grayOutPanel.SetActive(true);
 
-            if (!inMainMenu)
-            {
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
-            Debug.Log("Settings");
+            
+
+        }
+        if (!inMainMenu)
+        {
+            ToggleAttachedObject(buttons[currentIndex], false);
         }
         if (settingsPanel.activeSelf == true)
         {
@@ -193,7 +193,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Extras()
     {
-        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel && !creditsPanel.inCreditsPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             creditsPanelGameObject.SetActive(true);
@@ -217,7 +217,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Exit()
     {
-        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (!exitPanel.inExitPanel && !settingsPanelController.inSettingsPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel && !creditsPanel.inCreditsPanel)
         {
             AudioManager.Instance.PlaySFX("InterfaceGO");
             exitPanelGameObject.SetActive(true);

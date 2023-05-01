@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -61,7 +64,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void HandleMainMenuPanelInput()
     {
-        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        if (inPauseMenu && !sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
         {
             Button selectedButton = buttons[currentIndex];
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -73,7 +76,6 @@ public class PauseMenu : MonoBehaviour
                 {
                     currentIndex = buttons.Length - 1;
                 }
-
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -85,11 +87,9 @@ public class PauseMenu : MonoBehaviour
                     currentIndex = 0;
                 }
             }
-
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 bool anyButtonHovered = false;
-
                 for (int i = 0; i < buttons.Length; i++)
                 {
                     if (RectTransformUtility.RectangleContainsScreenPoint(buttons[i].GetComponent<RectTransform>(), Input.mousePosition))
@@ -100,26 +100,22 @@ public class PauseMenu : MonoBehaviour
                             isMouseOverButton = true;
                         }
                         anyButtonHovered = true;
-
                         ToggleAttachedObject(selectedButton, false);
                         currentIndex = i;
                         selectedButton = buttons[currentIndex];
                         ToggleAttachedObject(selectedButton, true);
                         break;
                     }
-
                 }
                 if (!anyButtonHovered)
                 {
                     isMouseOverButton = false;
                 }
-
             }
             else
             {
                 isMouseOverButton = false;
             }
-
             Submit();
         }
     }
@@ -154,7 +150,107 @@ public class PauseMenu : MonoBehaviour
     {
         GameObject attachedObject = button.gameObject.transform.GetChild(0).gameObject;
         attachedObject.SetActive(state);
-    }    
+    }
+   
+    public void OnButtonClickAudioGame()
+    {
+        if (inPauseMenu && !sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        {
+            AudioManager.Instance.PlaySFX("InterfaceGO");
+            grayOutPanel.SetActive(true);
+            audioPanelGameObject.SetActive(true);
+            audioPanel.inAudioPanel = true;
+            inPauseMenu = false;           
+        }
+        if (!inPauseMenu)
+        {
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        if (audioPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        else
+        {
+            Debug.Log("!");
+        }
+    }
+    public void OnButtonClickGraphicGame()
+    {
+        if (inPauseMenu && !sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        {
+            AudioManager.Instance.PlaySFX("InterfaceGO");
+            grayOutPanel.SetActive(true);
+            graphicPanelGameObject.SetActive(true);
+            graphicPanel.inGraphicPanel = true;
+            inPauseMenu = false;            
+        }
+        if (!inPauseMenu)
+        {
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        if (graphicPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        else
+        {
+            Debug.Log("!");
+        }
+
+    }
+    public void OnButtonClickControlsGame()
+    {
+        if (inPauseMenu && !sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        {
+            AudioManager.Instance.PlaySFX("InterfaceGO");
+            grayOutPanel.SetActive(true);
+            controlPanelGameObject.SetActive(true);
+            controlsPanel.inControlPanel = true;
+            inPauseMenu = false;           
+        }
+        if (!inPauseMenu)
+        {
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        if (controlPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        else
+        {
+            Debug.Log("!");
+        }
+    }
+    public void OnButtonClickQuitGame()
+    {
+        if (inPauseMenu && !sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
+        {
+            AudioManager.Instance.PlaySFX("InterfaceBACK");
+            Debug.Log("Quit");
+            exitPanelGameObject.SetActive(true);
+            inPauseMenu = false;
+            exitPanel.inExitPanel = true;
+            grayOutPanel.SetActive(true);          
+        }
+        if (!inPauseMenu)
+        {
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        if (exitPanelGameObject.activeSelf == true)
+        {
+            currentIndex = 0;
+            ToggleAttachedObject(buttons[currentIndex], false);
+        }
+        else
+        {
+            Debug.Log("!");
+        }
+    }
+
     public void PauseGame()
     {
         hPExpGameObject.SetActive(false);
@@ -183,104 +279,5 @@ public class PauseMenu : MonoBehaviour
         gamePaused = false;
         playerController.LookAtMouseEnabled = true;
         Debug.Log("Resume Dzia³a");
-    }
-    public void OnButtonClickAudioGame()
-    {
-        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
-        {
-            AudioManager.Instance.PlaySFX("InterfaceGO");
-            grayOutPanel.SetActive(true);
-            audioPanelGameObject.SetActive(true);
-            audioPanel.inAudioPanel = true;
-            inPauseMenu = false;
-            if (!inPauseMenu)
-            {
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
-            
-        }
-        if (audioPanelGameObject.activeSelf == true)
-        {
-            currentIndex = 0;
-            ToggleAttachedObject(buttons[currentIndex], false);
-        }
-        else
-        {
-            Debug.Log("!");
-        }
-    }
-    public void OnButtonClickGraphicGame()
-    {
-        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
-        {
-            AudioManager.Instance.PlaySFX("InterfaceGO");
-            grayOutPanel.SetActive(true);
-            graphicPanelGameObject.SetActive(true);
-            graphicPanel.inGraphicPanel = true;
-            inPauseMenu = false;
-            if (!inPauseMenu)
-            {
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
-            
-        }
-        if (graphicPanelGameObject.activeSelf == true)
-        {
-            currentIndex = 0;
-            ToggleAttachedObject(buttons[currentIndex], false);
-        }
-        else
-        {
-            Debug.Log("!");
-        }
-
-    }
-    public void OnButtonClickControlsGame()
-    {
-        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
-        {
-            AudioManager.Instance.PlaySFX("InterfaceGO");
-            grayOutPanel.SetActive(true);
-            controlPanelGameObject.SetActive(true);
-            controlsPanel.inControlPanel = true;
-            inPauseMenu = false;
-            if (!inPauseMenu)
-            {
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
-            
-        }
-        if (controlPanelGameObject.activeSelf == true)
-        {
-            currentIndex = 0;
-            ToggleAttachedObject(buttons[currentIndex], false);
-        }
-        else
-        {
-            Debug.Log("!");
-        }
-    }
-    public void OnButtonClickQuitGame()
-    {
-        if (!sumaryScreen.isSumaryScreenOpen && !exitPanel.inExitPanel && !audioPanel.inAudioPanel && !graphicPanel.inGraphicPanel && !resulationPanel.resulationPanelIsActive && !controlsPanel.inControlPanel)
-        {
-            AudioManager.Instance.PlaySFX("InterfaceBACK");
-            Debug.Log("Quit");
-            exitPanelGameObject.SetActive(true);
-            inPauseMenu = false;
-            exitPanel.inExitPanel = true;
-            grayOutPanel.SetActive(true);
-
-            if (!inPauseMenu)
-            {
-                ToggleAttachedObject(buttons[currentIndex], false);
-            }
-            
-        }
-        if (exitPanelGameObject.activeSelf == true)
-        {
-            currentIndex = 0;
-            ToggleAttachedObject(buttons[currentIndex], false);
-        }
     }
 }

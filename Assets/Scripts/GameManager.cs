@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private float elapsedTime;
     public bool isTimerRunning;
 
-
+    
 
     private void Start()
     {
@@ -61,10 +61,10 @@ public class GameManager : MonoBehaviour
 
     public void ShowSummaryPanel()
     {
-        sumaryScreen.isSumaryScreenOpen = true;
         summaryPanel.SetActive(true);
-        summaryPanel.transform.localScale = Vector3.one * 0.1f;
         StartCoroutine(ScaleUp());
+        sumaryScreen.isSumaryScreenOpen = true;       
+        summaryPanel.transform.localScale = Vector3.one * 0.1f;      
     }
     private IEnumerator ScaleUp()
     {
@@ -82,4 +82,5 @@ public class GameManager : MonoBehaviour
 
         summaryPanel.transform.localScale = targetScale;
     }
+
 }

@@ -43,12 +43,6 @@ public class Enemy : MonoBehaviour, IHitable
         StartCoroutine(DestroyAfterDelay(textObject));
     }
 
-    void Die()
-    {
-        Destroy(gameObject);
-        BoucingEffect();
-    }
-
     private IEnumerator DestroyAfterDelay(GameObject gameObject, float delay = 1f)
     {
         yield return new WaitForSeconds(delay);
@@ -82,6 +76,12 @@ public class Enemy : MonoBehaviour, IHitable
         }
 
         ShowDamageText(damageAmount);
+    }
+    void Die()
+    {
+        Destroy(gameObject);
+        BoucingEffect();
+        MoneyManager.instance.AddMoney(1);
     }
 
 }
