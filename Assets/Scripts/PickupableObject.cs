@@ -4,24 +4,27 @@ using TMPro;
 using UnityEngine;
 
 public class PickupableObject : MonoBehaviour, IPickupable
-{
-    public string[] description = { "This is a pickupable object." };
-    public Sprite sprite;
-    public Sprite dotSprite;
-    //Tytu³
-    public string title = "Title";
-    public Color titleColor = Color.white;
-
-    private float particleLifetime = 2.0f;
-    public GameObject destroyParticles;
-    public GameObject pickupParticles;
-    int cost;
+{   
     [Header("==== Another Scripts ====")]
     [Space(10)]
     [SerializeField] private ExperienceSystem experienceSystem;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private TeleportationToItemRoom teleportationToItemRoom;
-
+    [Header("==== Title ====")]
+    [Space(10)]
+    public string title = "Title";
+    public Color titleColor = Color.white;
+    [Header("==== Upgrades ====")]
+    [Space(10)]
+    private float particleLifetime = 2.0f;
+    public GameObject destroyParticles;
+    public GameObject pickupParticles;
+    int cost;
+    [Header("==== Another ====")]
+    [Space(10)]
+    public string[] description = { "This is a pickupable object." };
+    public Sprite sprite;
+    public Sprite dotSprite;
 
     public void OnPickup()
     {       
@@ -124,8 +127,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
             {
                 Debug.Log("Not enough money to purchase Dash Upgrade!");
             }
-        }
-       
+        }       
     }
 
     public string[] GetDescription()

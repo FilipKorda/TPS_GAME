@@ -6,12 +6,16 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    
+    [Header("==== Another Scripts ====")]
+    [Space(10)]
+    [SerializeField] public TrackPlayerStats trackPlayerStats;
+    [SerializeField] public SumaryScreen sumaryScreen;
+    [Header("==== Another ====")]
+    [Space(10)]
     [SerializeField] private Animator startGame;
     [SerializeField] public int numKills;
     [SerializeField] public GameObject summaryPanel;
-    [SerializeField] public TrackPlayerStats trackPlayerStats;
-    [SerializeField] public SumaryScreen sumaryScreen;
-
     public TextMeshProUGUI timerText;
     private float elapsedTime;
     public bool isTimerRunning;

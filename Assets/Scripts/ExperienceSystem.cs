@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class ExperienceSystem : MonoBehaviour
 {
+    [Header("==== Another Scripts ====")]
+    [Space(10)]
     public int currentLevel = 0;
     public int currentXP = 0;
     public int xpToNextLevel = 100;
     private float particleLifetime = 2f;
     public TextMeshProUGUI levelText;
     public Slider xpSlider;
-
     public Gradient gradient;
     [SerializeField] private Animator levelUp;
     [SerializeField] private GameObject levelUpParticles;

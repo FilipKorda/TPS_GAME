@@ -6,21 +6,25 @@ using UnityEngine.UI;
 
 public class TeleportationToItemRoom : MonoBehaviour
 {
+    [Header("==== Lists ====")]
+    [Space(10)]
+    [SerializeField] public List<GameObject> list1;
+    [SerializeField] public List<GameObject> list2;
+    [SerializeField] public List<GameObject> list3;
+    [Header("==== Fades ====")]
+    [Space(10)]
+    private float fadeDuration = 0.3f;
+    private float fadeDelay = 1f;
+    public Image fadeOutInPanelImage;  
+    [Header("==== Others ====")]
+    [Space(10)]
     public Transform teleportTarget;
     public GameObject player;
     private bool canTeleport = false;
     public string description = "Press E to teleport";
     public TextMeshProUGUI descriptionText;
-
-    //Fade Out and In
-    private float fadeDuration = 0.3f;
-    private float fadeDelay = 1f;
-    public Image fadeOutInPanelImage;
-
-    [SerializeField] public List<GameObject> list1;
-    [SerializeField] public List<GameObject> list2;
-    [SerializeField] public List<GameObject> list3;
     public bool isObjectActive = false;
+
 
 
     void Start()

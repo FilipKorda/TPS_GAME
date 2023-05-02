@@ -4,9 +4,13 @@ using UnityEngine.Animations;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("==== Another Scripts ====")]
+    [Space(10)]
+    [SerializeField] public GameManager gameManager;
+    [Header("==== Anothers ====")]
+    [Space(10)]
     [SerializeField] private float moveSpeed = 10f;
     private Rigidbody2D rb;
-
     [SerializeField] private Transform _gunPoint;
     [SerializeField] private GameObject _bulletTrail;
     [SerializeField] private float _weaponrange = 10f;
@@ -15,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public bool LookAtMouseEnabled = true;
     private float _timeSinceLastShot = 0f;
     private bool _firstShot = true;
-    [SerializeField] public GameManager gameManager;
+    
 
 
     public float dashDistance = 5f; // Dystans, na który gracz siê przesunie podczas dashu

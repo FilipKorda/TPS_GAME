@@ -3,13 +3,18 @@ using TMPro;
 using System.Collections;
 
 public class Enemy : MonoBehaviour, IHitable
-{
+{   
+    [Header("==== Another Scripts ====")]
+    [Space(10)]
+    [SerializeField] private ExperienceSystem experienceSystem;
+    [Header("==== Another ====")]
+    [Space(10)]
     [SerializeField] private int health = 5;
     [SerializeField] private int damageToPlayer = 1;
     [SerializeField] private GameObject amountOfDamagePrefab;
     [SerializeField] private GameObject objectToDrop;
     public Canvas canvas;
-    private ExperienceSystem experienceSystem;
+    public int moneyForKill;
 
 
     private void Awake()
@@ -81,7 +86,8 @@ public class Enemy : MonoBehaviour, IHitable
     {
         Destroy(gameObject);
         BoucingEffect();
-        MoneyManager.instance.AddMoney(1);
+        //kasa któr¹ dotajesz 
+        MoneyManager.instance.AddMoney(moneyForKill);
     }
 
 }
