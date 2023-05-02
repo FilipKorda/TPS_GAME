@@ -20,6 +20,8 @@ public class TeleportationToItemRoom : MonoBehaviour
     [SerializeField] public List<GameObject> list1;
     [SerializeField] public List<GameObject> list2;
     [SerializeField] public List<GameObject> list3;
+    public bool isObjectActive = false;
+
 
     void Start()
     {
@@ -76,6 +78,7 @@ public class TeleportationToItemRoom : MonoBehaviour
         fadeOutInPanelImage.color = new Color(0, 0, 0, 1f);
         //losowanie itemów do pojawienia
         GameObject[] randomObjects = GetRandomObjectsFromLists();
+        isObjectActive = true;
         //koniec losowania itemów
         player.transform.position = teleportTarget.position;
         Time.timeScale = 1;

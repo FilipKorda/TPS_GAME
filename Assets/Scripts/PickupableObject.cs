@@ -19,7 +19,9 @@ public class PickupableObject : MonoBehaviour, IPickupable
     [Header("==== Another Scripts ====")]
     [Space(10)]
     [SerializeField] private ExperienceSystem experienceSystem;
-    [SerializeField] private PlayerController playerController;     
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private TeleportationToItemRoom teleportationToItemRoom;
+
 
     public void OnPickup()
     {       
@@ -49,6 +51,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
                     }
                 }
                 Destroy(gameObject);
+                teleportationToItemRoom.isObjectActive = false;
             }
             else
             {
@@ -81,6 +84,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
                     }
                 }
                 Destroy(gameObject);
+                teleportationToItemRoom.isObjectActive = false;
             }
             else
             {
@@ -112,8 +116,9 @@ public class PickupableObject : MonoBehaviour, IPickupable
                         Destroy(particleTwo.gameObject, particleLifetime);
                         Debug.Log("Masz upgrade tego: " + gameObject.name);
                     }
-                }             
+                }
                 Destroy(gameObject);
+                teleportationToItemRoom.isObjectActive = false;
             }
             else
             {
@@ -122,9 +127,6 @@ public class PickupableObject : MonoBehaviour, IPickupable
         }
        
     }
-
-    
-
 
     public string[] GetDescription()
     {

@@ -14,14 +14,17 @@ public class PickUpSystem : MonoBehaviour
     public Image spriteImage;
     private GameObject currentObject;
     public TeleportationToItemRoom teleportationToItemRoom;
+    public TeleportToTheGameField teleportToTheGameField;
+    public GameObject particleSpawnEffect;
+
 
     private void Start()
     {
         spriteImage.gameObject.SetActive(false);
     }
 
-    void Update()
-    {       
+    private void Update()
+    {
         if (Input.GetKeyDown(interactKey))
         {
             if (currentObject != null)
@@ -38,7 +41,6 @@ public class PickUpSystem : MonoBehaviour
                     teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list1);
                     teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list2);
                     teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list3);
-
                 }
             }
         }
@@ -72,11 +74,11 @@ public class PickUpSystem : MonoBehaviour
             spriteImage.gameObject.SetActive(false);
         }
     }
-    /*IEnumerator ShowTeleportAfterDelay(float delay)
+    IEnumerator ShowTeleportAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         teleportToTheGameField.teleport.SetActive(true);
         GameObject particleSpawn = Instantiate(particleSpawnEffect, teleportToTheGameField.teleport.transform.position, Quaternion.identity);
         Destroy(particleSpawn, delay);
-    }*/
+    }
 }
