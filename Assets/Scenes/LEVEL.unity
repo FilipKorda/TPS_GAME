@@ -709,20 +709,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: "[byc tytu\u0142]"
+  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0.5803922, g: 0, b: 1, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 697ddfc9874e88c49b97ad3317f1e477, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: "[byc tytu\u0142]"
-  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &50257108
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1505,6 +1508,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1001365346}
+  - {fileID: 780130575}
   - {fileID: 634790064}
   - {fileID: 583202013}
   - {fileID: 985624856}
@@ -5901,11 +5905,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0dfd2d3f8e4a944ae5deafe6234ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trackPlayerStats: {fileID: 825865297}
+  sumaryScreen: {fileID: 1297726915}
   startGame: {fileID: 1272926660}
   numKills: 0
   summaryPanel: {fileID: 1297726911}
-  trackPlayerStats: {fileID: 825865297}
-  sumaryScreen: {fileID: 1297726915}
   timerText: {fileID: 1183996674}
   isTimerRunning: 0
 --- !u!114 &435721942
@@ -6577,83 +6581,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &518260028
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 518260029}
-  - component: {fileID: 518260031}
-  - component: {fileID: 518260030}
-  m_Layer: 5
-  m_Name: MoneyImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &518260029
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518260028}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1698137686}
-  m_Father: {fileID: 1272926659}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.399986, y: -64.69998}
-  m_SizeDelta: {x: 30, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &518260030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518260028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &518260031
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518260028}
-  m_CullTransparentMesh: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6805,20 +6732,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[pojecia]'
+  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0.5803922, g: 0, b: 1, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: e13bc33d18cb0274da12906694351d62, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[pojecia]'
-  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &520833138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7797,20 +7727,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[gowna ale nie moge]'
+  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0, g: 1, b: 0.6666667, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 744ff6de1fe4107438c772d3ec8154f9, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[gowna ale nie moge]'
-  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &582490146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8747,20 +8680,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[kolor tego ]'
+  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0, g: 1, b: 0.6666667, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 33faf83b4184d944f997d5b44f0d72b7, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[kolor tego ]'
-  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &650458711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9092,20 +9028,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[jak tego dokonac]'
+  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0.5803922, g: 0, b: 1, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: e13bc33d18cb0274da12906694351d62, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[jak tego dokonac]'
-  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &650988296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10716,6 +10655,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770641420}
   m_CullTransparentMesh: 1
+--- !u!1 &780130574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780130575}
+  - component: {fileID: 780130577}
+  - component: {fileID: 780130576}
+  m_Layer: 5
+  m_Name: DescriptionOfAnObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &780130575
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780130574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 135362279}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 41.5729, y: 190.5}
+  m_SizeDelta: {x: 416.8542, y: 199.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &780130576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780130574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: ffc87cd12bca7e041ac8751d8d4407cb, type: 2}
+  m_sharedMaterial: {fileID: 2904173833534770151, guid: ffc87cd12bca7e041ac8751d8d4407cb, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 0.8235294, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 5
+  m_wordSpacing: 0
+  m_lineSpacing: 5
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -83.75197, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &780130577
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780130574}
+  m_CullTransparentMesh: 1
 --- !u!1 &787470001
 GameObject:
   m_ObjectHideFlags: 0
@@ -11058,11 +11132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577b8f2b2f4968f41b024ccacb692ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportTarget: {fileID: 708699874}
-  player: {fileID: 490251297}
-  description: Press E to teleport
-  descriptionText: {fileID: 985624854}
-  fadeOutInPanelImage: {fileID: 1774718398}
   list1:
   - {fileID: 2052448596}
   - {fileID: 1141070471}
@@ -11081,6 +11150,11 @@ MonoBehaviour:
   - {fileID: 2106599162}
   - {fileID: 582490144}
   - {fileID: 958226720}
+  fadeOutInPanelImage: {fileID: 1774718398}
+  teleportTarget: {fileID: 708699874}
+  player: {fileID: 490251297}
+  description: Press E to teleport
+  descriptionText: {fileID: 985624854}
   isObjectActive: 0
 --- !u!58 &805962889
 CircleCollider2D:
@@ -11341,20 +11415,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[majabyc]'
+  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 1, g: 0.7137255, b: 0, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: f0c2ae9e59b08964083f9e8cd683f69c, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[majabyc]'
-  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &822757693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12507,20 +12584,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[i nie mam bladego]'
+  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0.5803922, g: 0, b: 1, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: eee6e3a2eea0130469b884fc6624acb5, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[i nie mam bladego]'
-  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &885972473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12841,20 +12921,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[DASH]'
+  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0, g: 1, b: 0.6666667, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 59f9a3883ae4cd048b631500188f6672, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[DASH]'
-  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &902873518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13140,20 +13223,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[bo mi juz lepoiej]'
+  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0, g: 1, b: 0.6666667, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 744ff6de1fe4107438c772d3ec8154f9, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[bo mi juz lepoiej]'
-  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &958226722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15144,20 +15230,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[BEKA]'
+  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 1, g: 0.7137255, b: 0, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 311ae7463dce1b643ae0243f118a3ed3, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[BEKA]'
-  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &1141070473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16760,7 +16849,6 @@ RectTransform:
   m_Children:
   - {fileID: 1072609824}
   - {fileID: 967607924}
-  - {fileID: 518260029}
   m_Father: {fileID: 895721738}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17594,20 +17682,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[Increase Attack Speed]'
+  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0.5803922, g: 0, b: 1, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: b041307f1c6cc9b45a70df0240fccb3a, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[Increase Attack Speed]'
-  titleColor: {r: 0.5800934, g: 0, b: 1, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &1353377161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19784,20 +19875,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: "[R\xD3ZNE]"
+  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 1, g: 0.7137255, b: 0, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 243554a269007404a91f32a1417c7cc9, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: "[R\xD3ZNE]"
-  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &1567104773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21934,141 +22028,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691006871}
   m_CullTransparentMesh: 1
---- !u!1 &1698137685
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1698137686}
-  - component: {fileID: 1698137688}
-  - component: {fileID: 1698137687}
-  m_Layer: 5
-  m_Name: MoneyText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1698137686
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698137685}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 518260029}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.499985, y: 0.000030517578}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1698137687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698137685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 0
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1698137688
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698137685}
-  m_CullTransparentMesh: 1
 --- !u!1 &1709584487
 GameObject:
   m_ObjectHideFlags: 0
@@ -22471,13 +22430,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08d9f4e124993b48b396760e46f6605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkDestroyedObjects: {fileID: 1979009780}
+  FadeOutInPanelImage: {fileID: 1774718398}
   teleportTarget: {fileID: 864155480}
   player: {fileID: 490251297}
   teleport: {fileID: 1760366306}
-  FadeOutInPanelImage: {fileID: 1774718398}
   description: Press E to teleport
   descriptionText: {fileID: 985624854}
-  checkDestroyedObjects: {fileID: 1979009780}
 --- !u!1 &1764697461
 GameObject:
   m_ObjectHideFlags: 0
@@ -24587,7 +24546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194ca34ce614f174e90f254c32538646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToCheck:
+  objectsToDetect:
   - {fileID: 2052448596}
   - {fileID: 1141070471}
   - {fileID: 1567104771}
@@ -24603,11 +24562,13 @@ MonoBehaviour:
   - {fileID: 2106599162}
   - {fileID: 582490144}
   - {fileID: 958226720}
+  detectionDelay: 0.2
+  teleportDelay: 1
   teleportToTheGameField: {fileID: 1760366311}
   teleportationToItemRoom: {fileID: 805962888}
   particleSpawnEffect: {fileID: 5048344003160859788, guid: 5426dd1499618094bb7ffbd79baf88c0, type: 3}
+  objectsDestroyed: 0
   keyToCheck: 101
-  anyObjectDestroyed: 0
 --- !u!1 &1990034641
 GameObject:
   m_ObjectHideFlags: 0
@@ -25450,20 +25411,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[Increase Damage]'
+  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 1, g: 0.7137255, b: 0, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: dd46e4b27939d264f9c14ec63d7ccf2f, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[Increase Damage]'
-  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!114 &2052448602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26303,20 +26267,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[i potrzebuje pomocy]'
+  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 0, g: 1, b: 0.6666667, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: 6c86e73230a703d42a4226e26b9cb7b0, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[i potrzebuje pomocy]'
-  titleColor: {r: 0, g: 1, b: 0.6677432, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &2106599164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26486,20 +26453,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4da320d476cf24fa57efb5669cc5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 1979009773}
+  playerController: {fileID: 418646503}
+  teleportationToItemRoom: {fileID: 805962888}
+  title: '[tutaj napisy]'
+  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
+  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
+  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
   description:
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
   - 'ale beka znowu dzial '
+  statusMoneyColor: {r: 1, g: 0.7137255, b: 0, a: 1}
+  descriptionStatusMoney: Not enough money to purchase
   sprite: {fileID: 21300000, guid: f0c2ae9e59b08964083f9e8cd683f69c, type: 3}
   dotSprite: {fileID: 21300000, guid: ffe694697d4d1e04fa7f698f27f6723f, type: 3}
-  title: '[tutaj napisy]'
-  titleColor: {r: 1, g: 0.71440893, b: 0, a: 1}
-  destroyParticles: {fileID: 4324721383926749292, guid: 2810086e8cb98814195d2fe4beb349f7, type: 3}
-  pickupParticles: {fileID: 615136961852844333, guid: b13c883631ac5244e919a75fe509ff98, type: 3}
-  experienceSystem: {fileID: 1979009773}
-  playerController: {fileID: 418646503}
-  teleportationToItemRoom: {fileID: 805962888}
+  statusMoneyText: {fileID: 780130576}
 --- !u!61 &2132666630
 BoxCollider2D:
   m_ObjectHideFlags: 0

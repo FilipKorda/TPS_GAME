@@ -7,16 +7,12 @@ using UnityEngine.UI;
 
 public class TeleportToTheGameField : MonoBehaviour
 {
-    [Header("==== Another Scripts ====")]
-    [Space(10)]
     public CheckDestroyedObjects checkDestroyedObjects;
-    [Header("==== Fades ====")]
-    [Space(10)]
+
     private float fadeDuration = 0.3f;
     private float fadeDelay = 1f;
     public Image FadeOutInPanelImage;
-    [Header("==== Others ====")]
-    [Space(10)]
+
     public Transform teleportTarget;
     public GameObject player;
     public GameObject teleport;
@@ -86,6 +82,6 @@ public class TeleportToTheGameField : MonoBehaviour
         teleport.SetActive(false);
 
         //tu zamieniasz boola z skryptu CheckDestroyedObjects na false ¿eybœ móg³ ponownie wróciæ do sklepu i kupiæ coœ
-        checkDestroyedObjects.anyObjectDestroyed = false;
+        checkDestroyedObjects.objectsDestroyed = false;
     }
 }

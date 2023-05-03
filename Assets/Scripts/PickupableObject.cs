@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 public class PickupableObject : MonoBehaviour, IPickupable
-{   
+{
     [Header("==== Another Scripts ====")]
     [Space(10)]
     [SerializeField] private ExperienceSystem experienceSystem;
@@ -17,17 +17,20 @@ public class PickupableObject : MonoBehaviour, IPickupable
     [Header("==== Upgrades ====")]
     [Space(10)]
     private float particleLifetime = 2.0f;
-    public GameObject destroyParticles;
-    public GameObject pickupParticles;
+    [SerializeField] private GameObject destroyParticles;
+    [SerializeField] private GameObject pickupParticles;
     int cost;
     [Header("==== Another ====")]
     [Space(10)]
     public string[] description = { "This is a pickupable object." };
-    public Sprite sprite;
-    public Sprite dotSprite;
+    [SerializeField] private Color statusMoneyColor = Color.white;
+    public string descriptionStatusMoney = "Not enough money to purchase";
+    [SerializeField] private Sprite sprite;
+    [SerializeField] private Sprite dotSprite;
+    [SerializeField] public TextMeshProUGUI statusMoneyText;
 
     public void OnPickup()
-    {       
+    {
         //Add damage
         IncreaseDamage increaseDamage = GetComponent<IncreaseDamage>();
         if (increaseDamage != null && experienceSystem != null)
@@ -58,7 +61,9 @@ public class PickupableObject : MonoBehaviour, IPickupable
             }
             else
             {
-                Debug.Log("Not enough money to purchase increaseDamage!");
+                statusMoneyText.text = descriptionStatusMoney;
+                ColorLastWord(descriptionStatusMoney);
+                StartCoroutine(HideStatusText(1f));
             }
         }
         //Add attackSpeed
@@ -91,7 +96,10 @@ public class PickupableObject : MonoBehaviour, IPickupable
             }
             else
             {
-                Debug.Log("Not enough money to purchase increaseAttackSpeed!");
+                statusMoneyText.text = descriptionStatusMoney;
+                ColorLastWord(descriptionStatusMoney);
+                StartCoroutine(HideStatusText(1f));
+
             }
         }
         //DashUpgrade
@@ -100,7 +108,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
         {
             int cost = dashUpgrade.GetCost();
             if (MoneyManager.instance.playerMoney >= cost)
-            {              
+            {
                 MoneyManager.instance.RemoveMoney(cost);
                 dashUpgrade.PlayerNowHaveDash(playerController);
                 Debug.Log("Masz Dasha");
@@ -125,11 +133,26 @@ public class PickupableObject : MonoBehaviour, IPickupable
             }
             else
             {
-                Debug.Log("Not enough money to purchase Dash Upgrade!");
+                statusMoneyText.text = descriptionStatusMoney;
+                ColorLastWord(descriptionStatusMoney);
+                StartCoroutine(HideStatusText(1f));
             }
-        }       
-    }
 
+        }
+    }
+    public void ColorLastWord(string text)
+    {
+        string[] words = text.Split(' ');
+        string lastWord = words[words.Length - 1];
+        string formattedText = string.Format("{0}<color=#{1}>{2}</color>",
+            string.Join(" ", words, 0, words.Length - 1), ColorUtility.ToHtmlStringRGBA(statusMoneyColor), lastWord);
+        statusMoneyText.text = formattedText;
+    }
+    IEnumerator HideStatusText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        statusMoneyText.text = "";
+    }
     public string[] GetDescription()
     {
         string[] result = new string[description.Length];
