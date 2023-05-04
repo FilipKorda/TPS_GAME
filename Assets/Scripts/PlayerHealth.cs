@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] public int maxHealth = 100;
     public int currHealth;
     [SerializeField] public Slider healthSlider;
     [SerializeField] private Animator TakeHit;
@@ -34,8 +34,17 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
-   
-    private void UpdateHealthBar()
+    public void AddHealth(int health)
+    {
+        currHealth += health;
+        if (currHealth > maxHealth)
+        {
+            currHealth = maxHealth;
+        }
+        UpdateHealthBar();
+    }
+
+    public void UpdateHealthBar()
     {
         healthSlider.value = currHealth;
         TakeHit.SetTrigger("TakeHit");

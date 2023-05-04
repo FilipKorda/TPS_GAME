@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] private int damageToPlayer = 1;
     [SerializeField] private GameObject amountOfDamagePrefab;
     [SerializeField] private GameObject objectToDrop;
+    [SerializeField] private GameObject healthSpritePrefab;
     public Canvas canvas;
     public int moneyForKill;
 
@@ -88,6 +89,10 @@ public class Enemy : MonoBehaviour, IHitable
         BoucingEffect();
         //kasa któr¹ dotajesz 
         MoneyManager.instance.AddMoney(moneyForKill);
+
+        //health
+        GameObject healthSprite = Instantiate(healthSpritePrefab, transform.position, Quaternion.identity);
+        healthSprite.GetComponent<HealthSpriteGoToPlayer>().SetTarget(FindObjectOfType<PlayerHealth>().gameObject);
     }
 
 }

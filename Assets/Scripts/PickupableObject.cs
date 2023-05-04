@@ -10,6 +10,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
     [SerializeField] private ExperienceSystem experienceSystem;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private TeleportationToItemRoom teleportationToItemRoom;
+    [SerializeField] private PlayerHealth playerHealth;
     [Header("==== Title ====")]
     [Space(10)]
     public string title = "Title";
@@ -34,6 +35,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
         BuyIncreaseDamage();
         BuyIncreaseAttackSpeed();
         BuyDashUpgrade();
+        BuyMaxHealth();
     }
     public void BuyIncreaseDamage()
     {
@@ -152,7 +154,47 @@ public class PickupableObject : MonoBehaviour, IPickupable
         }
     }
 
-    
+    public void BuyMaxHealth()
+    {
+        //HpUpgrade
+        IncreaseMaxHealthUpgrade increaseMaxHealth = GetComponent<IncreaseMaxHealthUpgrade>();
+        if (increaseMaxHealth != null && playerHealth != null)
+        {
+            int cost = increaseMaxHealth.GetCost();
+            if (MoneyManager.instance.playerMoney >= cost)
+            {
+                MoneyManager.instance.RemoveMoney(cost);
+                Debug.Log("Tu p³acisz za itema: " + cost);
+                increaseMaxHealth.IncreaseMaxHealth(playerHealth);
+                Debug.Log("Masz wiêcej HP");
+                // Disable all other pickupable objects in the scene
+                GameObject[] otherPickupables = GameObject.FindGameObjectsWithTag("Pickupable");
+                foreach (GameObject pickupable in otherPickupables)
+                {
+                    if (pickupable != gameObject)
+                    {
+                        //a tu niszczysz 2 pozosta³e
+                        Destroy(pickupable);
+                        GameObject particleOne = Instantiate(destroyParticles, pickupable.transform.position, Quaternion.identity);
+                        Destroy(particleOne, particleLifetime);
+                        //tu zbierasz przedmiot
+                        GameObject particleTwo = Instantiate(pickupParticles, transform.position, Quaternion.identity);
+                        Destroy(particleTwo, particleLifetime);
+                    }
+                }
+                Destroy(gameObject);
+                teleportationToItemRoom.isItemToBuyActive = false;
+            }
+            else
+            {
+                statusMoneyText.text = descriptionStatusMoney;
+                ColorLastWord(descriptionStatusMoney);
+                StartCoroutine(HideStatusText(1f));
+            }
+        }
+    }
+
+
     public void ColorLastWord(string text)
     {
         string[] words = text.Split(' ');

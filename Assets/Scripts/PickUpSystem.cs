@@ -30,19 +30,12 @@ public class PickUpSystem : MonoBehaviour
             if (currentObject != null)
             {
                 IPickupable pickupable = currentObject.GetComponent<IPickupable>();
-                if (pickupable != null)
-                {
-                    pickupable.OnPickup();
-                    descriptionText.text = "";
-                    titleText.text = "";
-                    spriteImage.sprite = null;
-                    spriteImage.gameObject.SetActive(false);
-                }
+                pickupable?.OnPickup();
             }
         }
 
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Pickupable"))
         {

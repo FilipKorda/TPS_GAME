@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 418646501}
   - component: {fileID: 418646506}
   - component: {fileID: 1979009778}
+  - component: {fileID: 1979009780}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -140,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5d9ba979d39924e9ed49ff64fabe9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   moveSpeed: 4
   _gunPoint: {fileID: 1625472405045432659}
   _bulletTrail: {fileID: 2227929242923762807, guid: dc54aada1f4b5d0478b0c559620636c5, type: 3}
@@ -147,7 +149,6 @@ MonoBehaviour:
   _mussleFlashAnimator: {fileID: 1625472405406876739}
   _timeBetweenShots: 1.5
   LookAtMouseEnabled: 1
-  gameManager: {fileID: 0}
   dashDistance: 5
   dashDuration: 0.5
   isDashUpgradeIsActive: 0
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b7ce8cb69f83a46ab54a702006b093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 100
   currHealth: 0
   healthSlider: {fileID: 0}
   TakeHit: {fileID: 0}
@@ -265,14 +266,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf27736eb52676b4c97da38966302b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRange: 2
-  interactKey: 101
   descriptionText: {fileID: 0}
   titleText: {fileID: 0}
+  pickupRange: 2
+  interactKey: 101
   spriteImage: {fileID: 0}
-  teleportationToItemRoom: {fileID: 0}
+--- !u!114 &1979009780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625472404133994906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194ca34ce614f174e90f254c32538646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToDetect:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  detectionDelay: 0.2
+  teleportDelay: 1
   teleportToTheGameField: {fileID: 0}
+  teleportationToItemRoom: {fileID: 0}
   particleSpawnEffect: {fileID: 5048344003160859788, guid: 5426dd1499618094bb7ffbd79baf88c0, type: 3}
+  itemToBuyAreDestroyed: 0
+  keyToCheck: 101
 --- !u!1 &1625472404580485866
 GameObject:
   m_ObjectHideFlags: 0

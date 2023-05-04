@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IncreaseDamage : MonoBehaviour, IPickupable
 {
-    private int damageToAdd = 5;
+    public int damageToAdd = 5;
     public int cost = 0;
     public void AddDamageToPlayer(ExperienceSystem experienceSystem)
     {
