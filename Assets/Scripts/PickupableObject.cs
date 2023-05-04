@@ -31,6 +31,12 @@ public class PickupableObject : MonoBehaviour, IPickupable
 
     public void OnPickup()
     {
+        BuyIncreaseDamage();
+        BuyIncreaseAttackSpeed();
+        BuyDashUpgrade();
+    }
+    public void BuyIncreaseDamage()
+    {
         //Add damage
         IncreaseDamage increaseDamage = GetComponent<IncreaseDamage>();
         if (increaseDamage != null && experienceSystem != null)
@@ -39,6 +45,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
             if (MoneyManager.instance.playerMoney >= cost)
             {
                 MoneyManager.instance.RemoveMoney(cost);
+                Debug.Log("Tu p³acisz za itema: " + cost);
                 increaseDamage.AddDamageToPlayer(experienceSystem);
                 Debug.Log("DOdano ci wiêcej obra¿eñ");
                 GameObject[] otherPickupables = GameObject.FindGameObjectsWithTag("Pickupable");
@@ -49,15 +56,14 @@ public class PickupableObject : MonoBehaviour, IPickupable
                         //a tu niszczysz 2 pozosta³e
                         Destroy(pickupable);
                         GameObject particleOne = Instantiate(destroyParticles, pickupable.transform.position, Quaternion.identity);
-                        Destroy(particleOne.gameObject, particleLifetime);
+                        Destroy(particleOne, particleLifetime);
                         //tu zbierasz przedmiot
                         GameObject particleTwo = Instantiate(pickupParticles, transform.position, Quaternion.identity);
-                        Destroy(particleTwo.gameObject, particleLifetime);
-                        Debug.Log("Masz upgrade tego: " + gameObject.name);
+                        Destroy(particleTwo, particleLifetime);
                     }
                 }
                 Destroy(gameObject);
-                teleportationToItemRoom.isObjectActive = false;
+                teleportationToItemRoom.isItemToBuyActive = false;
             }
             else
             {
@@ -66,6 +72,9 @@ public class PickupableObject : MonoBehaviour, IPickupable
                 StartCoroutine(HideStatusText(1f));
             }
         }
+    }
+    public void BuyIncreaseAttackSpeed()
+    {
         //Add attackSpeed
         IncreaseAttackSpeed increaseAttackSpeed = GetComponent<IncreaseAttackSpeed>();
         if (increaseAttackSpeed != null && playerController != null)
@@ -74,6 +83,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
             if (MoneyManager.instance.playerMoney >= cost)
             {
                 MoneyManager.instance.RemoveMoney(cost);
+                Debug.Log("Tu p³acisz za itema: " + cost);
                 increaseAttackSpeed.IncreaseAttackSpeedOfPlayer(playerController);
                 Debug.Log("Dostajesz wiekszy Attack Spped");
                 GameObject[] otherPickupables = GameObject.FindGameObjectsWithTag("Pickupable");
@@ -84,15 +94,14 @@ public class PickupableObject : MonoBehaviour, IPickupable
                         //a tu niszczysz 2 pozosta³e
                         Destroy(pickupable);
                         GameObject particleOne = Instantiate(destroyParticles, pickupable.transform.position, Quaternion.identity);
-                        Destroy(particleOne.gameObject, particleLifetime);
+                        Destroy(particleOne, particleLifetime);
                         //tu zbierasz przedmiot
                         GameObject particleTwo = Instantiate(pickupParticles, transform.position, Quaternion.identity);
-                        Destroy(particleTwo.gameObject, particleLifetime);
-                        Debug.Log("Masz upgrade tego: " + gameObject.name);
+                        Destroy(particleTwo, particleLifetime);
                     }
                 }
                 Destroy(gameObject);
-                teleportationToItemRoom.isObjectActive = false;
+                teleportationToItemRoom.isItemToBuyActive = false;
             }
             else
             {
@@ -102,6 +111,9 @@ public class PickupableObject : MonoBehaviour, IPickupable
 
             }
         }
+    }
+    public void BuyDashUpgrade()
+    {
         //DashUpgrade
         DashUpgrade dashUpgrade = GetComponent<DashUpgrade>();
         if (dashUpgrade != null && playerController != null)
@@ -110,6 +122,7 @@ public class PickupableObject : MonoBehaviour, IPickupable
             if (MoneyManager.instance.playerMoney >= cost)
             {
                 MoneyManager.instance.RemoveMoney(cost);
+                Debug.Log("Tu p³acisz za itema: " + cost);
                 dashUpgrade.PlayerNowHaveDash(playerController);
                 Debug.Log("Masz Dasha");
                 // Disable all other pickupable objects in the scene
@@ -121,15 +134,14 @@ public class PickupableObject : MonoBehaviour, IPickupable
                         //a tu niszczysz 2 pozosta³e
                         Destroy(pickupable);
                         GameObject particleOne = Instantiate(destroyParticles, pickupable.transform.position, Quaternion.identity);
-                        Destroy(particleOne.gameObject, particleLifetime);
+                        Destroy(particleOne, particleLifetime);
                         //tu zbierasz przedmiot
                         GameObject particleTwo = Instantiate(pickupParticles, transform.position, Quaternion.identity);
-                        Destroy(particleTwo.gameObject, particleLifetime);
-                        Debug.Log("Masz upgrade tego: " + gameObject.name);
+                        Destroy(particleTwo, particleLifetime);
                     }
                 }
                 Destroy(gameObject);
-                teleportationToItemRoom.isObjectActive = false;
+                teleportationToItemRoom.isItemToBuyActive = false;
             }
             else
             {
@@ -137,9 +149,10 @@ public class PickupableObject : MonoBehaviour, IPickupable
                 ColorLastWord(descriptionStatusMoney);
                 StartCoroutine(HideStatusText(1f));
             }
-
         }
     }
+
+    
     public void ColorLastWord(string text)
     {
         string[] words = text.Split(' ');

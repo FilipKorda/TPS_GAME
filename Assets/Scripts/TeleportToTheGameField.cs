@@ -69,7 +69,9 @@ public class TeleportToTheGameField : MonoBehaviour
         player.transform.position = teleportTarget.position;
         Time.timeScale = 1;
         yield return new WaitForSecondsRealtime(fadeDelay);
-
+        //tu zamieniasz boola z skryptu CheckDestroyedObjects na false ¿eybœ móg³ ponownie wróciæ do sklepu i kupiæ coœ
+        checkDestroyedObjects.itemToBuyAreDestroyed = false;
+        Debug.Log("Tu itemy To Buy Are s¹ zniszczone");
         t = 0;
         while (t < fadeDuration)
         {
@@ -81,7 +83,7 @@ public class TeleportToTheGameField : MonoBehaviour
         FadeOutInPanelImage.color = new Color(0, 0, 0, 0);
         teleport.SetActive(false);
 
-        //tu zamieniasz boola z skryptu CheckDestroyedObjects na false ¿eybœ móg³ ponownie wróciæ do sklepu i kupiæ coœ
-        checkDestroyedObjects.objectsDestroyed = false;
+   
+        
     }
 }

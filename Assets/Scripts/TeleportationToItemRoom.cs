@@ -23,7 +23,8 @@ public class TeleportationToItemRoom : MonoBehaviour
     private bool canTeleport = false;
     public string description = "Press E to teleport";
     public TextMeshProUGUI descriptionText;
-    public bool isObjectActive = false;
+    public bool isItemToBuyActive = false;
+    public CheckDestroyedObjects checkDestroyedObjects;
 
 
 
@@ -69,6 +70,8 @@ public class TeleportationToItemRoom : MonoBehaviour
     }
     IEnumerator Teleport()
     {
+        isItemToBuyActive = true;
+        checkDestroyedObjects.itemToBuyAreDestroyed = false;
         Time.timeScale = 0;
 
         float t = 0;
@@ -82,7 +85,8 @@ public class TeleportationToItemRoom : MonoBehaviour
         fadeOutInPanelImage.color = new Color(0, 0, 0, 1f);
         //losowanie itemów do pojawienia
         GameObject[] randomObjects = GetRandomObjectsFromLists();
-        isObjectActive = true;
+        
+        Debug.Log("a tu is Item To Buy Active jest false bo pojawiasz obiekty");
         //koniec losowania itemów
         player.transform.position = teleportTarget.position;
         Time.timeScale = 1;

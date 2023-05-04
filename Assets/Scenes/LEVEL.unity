@@ -11155,7 +11155,8 @@ MonoBehaviour:
   player: {fileID: 490251297}
   description: Press E to teleport
   descriptionText: {fileID: 985624854}
-  isObjectActive: 0
+  isItemToBuyActive: 0
+  checkDestroyedObjects: {fileID: 1979009780}
 --- !u!58 &805962889
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24567,7 +24568,7 @@ MonoBehaviour:
   teleportToTheGameField: {fileID: 1760366311}
   teleportationToItemRoom: {fileID: 805962888}
   particleSpawnEffect: {fileID: 5048344003160859788, guid: 5426dd1499618094bb7ffbd79baf88c0, type: 3}
-  objectsDestroyed: 0
+  itemToBuyAreDestroyed: 0
   keyToCheck: 101
 --- !u!1 &1990034641
 GameObject:
@@ -26844,6 +26845,14 @@ PrefabInstance:
       propertyPath: objectsToCheck.Array.data[14]
       value: 
       objectReference: {fileID: 958226720}
+    - target: {fileID: 1979009780, guid: f18701a6b048dc94a9f6c03b25dd7b6e, type: 3}
+      propertyPath: teleportToTheGameField
+      value: 
+      objectReference: {fileID: 1760366311}
+    - target: {fileID: 1979009780, guid: f18701a6b048dc94a9f6c03b25dd7b6e, type: 3}
+      propertyPath: teleportationToItemRoom
+      value: 
+      objectReference: {fileID: 805962888}
     - target: {fileID: 1625472404133994904, guid: f18701a6b048dc94a9f6c03b25dd7b6e, type: 3}
       propertyPath: m_RootOrder
       value: 6

@@ -11,16 +11,17 @@ public class CheckDestroyedObjects : MonoBehaviour
     public TeleportToTheGameField teleportToTheGameField;
     public TeleportationToItemRoom teleportationToItemRoom;
     public GameObject particleSpawnEffect;
-    public bool objectsDestroyed = false;
+    public bool itemToBuyAreDestroyed = false;
     public KeyCode keyToCheck = KeyCode.E;
 
     private void Update()
     {
-        if (teleportationToItemRoom.isObjectActive)
+        if (!teleportationToItemRoom.isItemToBuyActive)
         {
             if (Input.GetKeyDown(keyToCheck))
             {
                 StartCoroutine(DetectObjects());
+                Debug.Log("klikasz E i nie mo¿esz kupiæ Itemka bo masz za ma³o kasy");
             }
         }
     }
@@ -28,7 +29,7 @@ public class CheckDestroyedObjects : MonoBehaviour
 
     IEnumerator DetectObjects()
     {
-        while (!objectsDestroyed)
+        while (!itemToBuyAreDestroyed)
         {
             yield return new WaitForSeconds(detectionDelay);
 
@@ -48,9 +49,11 @@ public class CheckDestroyedObjects : MonoBehaviour
                 teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list1);
                 teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list2);
                 teleportationToItemRoom.CleanUpList(teleportationToItemRoom.list3);
-                Debug.Log("tu czyœcisz 2 lity");
-                objectsDestroyed = true;
+                Debug.Log("tu czyœcisz 2 listy");
+                itemToBuyAreDestroyed = true;
+                Debug.Log("tu Item To Buy s¹ nie zniszczone");
                 StartCoroutine(ShowTeleportAfterDelay(0.5f));
+                Debug.Log("a tu odpalasz teleport");
             }
         }
     }
