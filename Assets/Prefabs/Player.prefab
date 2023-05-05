@@ -147,7 +147,7 @@ MonoBehaviour:
   _bulletTrail: {fileID: 2227929242923762807, guid: dc54aada1f4b5d0478b0c559620636c5, type: 3}
   _weaponrange: 10
   _mussleFlashAnimator: {fileID: 1625472405406876739}
-  _timeBetweenShots: 1.5
+  _timeBetweenShots: 0.333
   LookAtMouseEnabled: 1
   dashDistance: 5
   dashDuration: 0.5

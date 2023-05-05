@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4458849039667302376}
   - component: {fileID: 6320443186239435836}
   - component: {fileID: 1125501260393071162}
+  - component: {fileID: 4667651337896707690}
   m_Layer: 0
-  m_Name: DrooppedHealth
+  m_Name: HealthSpritePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6320443186239435836
 SpriteRenderer:
@@ -99,5 +100,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   pickupDistance: 1.5
-  pickupDistanceToHeal: 2
+  playerTarget: {fileID: 1625472404133994904, guid: f18701a6b048dc94a9f6c03b25dd7b6e, type: 3}
   healthToAdd: 5
+--- !u!58 &4667651337896707690
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889404392785703447}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01

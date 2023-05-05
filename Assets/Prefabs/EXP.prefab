@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 880686741995913674}
   - component: {fileID: 880686741995913675}
   - component: {fileID: 2641790418063368547}
+  - component: {fileID: 7453668706134778906}
   m_Layer: 6
   m_Name: EXP
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &880686741995913675
 SpriteRenderer:
@@ -97,5 +98,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fec04a0df1083a498670e8ad8d31698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  pickupDistance: 1
+  playerTarget: {fileID: 1625472404133994904, guid: f18701a6b048dc94a9f6c03b25dd7b6e, type: 3}
   xpAmount: 10
-  pickupRange: 0.3
+--- !u!58 &7453668706134778906
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880686741995913652}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01

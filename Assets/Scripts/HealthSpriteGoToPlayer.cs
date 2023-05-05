@@ -6,9 +6,9 @@ public class HealthSpriteGoToPlayer : MonoBehaviour
 {
     public float speed = 5f;
     public float pickupDistance = 1f;
-    public float pickupDistanceToHeal = 0.1f;
-    private GameObject playerTarget;
+    [SerializeField] private Transform playerTarget;
     public int healthToAdd = 5;
+    //[SerializeField] private PlayerHealth playerHealth;
 
     void Update()
     {
@@ -17,32 +17,35 @@ public class HealthSpriteGoToPlayer : MonoBehaviour
             return;
         }
 
-        float distance = Vector2.Distance(transform.position, playerTarget.transform.position);
-        if (distance <= pickupDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, playerTarget.transform.position, speed * Time.deltaTime);
-        }
-    }
-    public void HealPlayer()
-    {
-        if (playerTarget == null)
+        PlayerHealth playerHealth = playerTarget.GetComponent<PlayerHealth>();
+        if (playerHealth != null && playerHealth.currHealth == playerHealth.maxHealth)
         {
             return;
         }
-        float distance = Vector2.Distance(transform.position, playerTarget.transform.position);
-        if (distance <= pickupDistanceToHeal)
+
+        float distance = Vector2.Distance(transform.position, playerTarget.position);
+        if (distance <= pickupDistance)
         {
-            PlayerHealth playerHealth = playerTarget.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+            transform.position = Vector2.MoveTowards(transform.position, playerTarget.position, speed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null && playerHealth.currHealth < playerHealth.maxHealth)
             {
                 playerHealth.AddHealth(healthToAdd);
+                Destroy(gameObject);
+                Debug.Log("Dostajesz tak¹ iloœæ HP: " + healthToAdd);
             }
-            Destroy(gameObject);
         }
     }
 
     public void SetTarget(GameObject target)
     {
-        playerTarget = target;
+        playerTarget = target.transform;
     }
 }

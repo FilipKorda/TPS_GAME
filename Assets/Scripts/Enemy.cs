@@ -3,25 +3,20 @@ using TMPro;
 using System.Collections;
 
 public class Enemy : MonoBehaviour, IHitable
-{   
-    [Header("==== Another Scripts ====")]
-    [Space(10)]
-    [SerializeField] private ExperienceSystem experienceSystem;
+{
     [Header("==== Another ====")]
     [Space(10)]
     [SerializeField] private int health = 5;
     [SerializeField] private int damageToPlayer = 1;
     [SerializeField] private GameObject amountOfDamagePrefab;
-    [SerializeField] private GameObject objectToDrop;
+    public float duration = 1f;
+    public float yOffset = 0.5f;
+    public float destroyDelay = 0.5f;
+    [SerializeField] private GameObject ExpObjectToDrop;
     [SerializeField] private GameObject healthSpritePrefab;
+    [SerializeField] private float dropChance;
     public Canvas canvas;
     public int moneyForKill;
-
-
-    private void Awake()
-    {
-        experienceSystem = FindObjectOfType<ExperienceSystem>();
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,12 +26,33 @@ public class Enemy : MonoBehaviour, IHitable
             Debug.Log("Dostajesz DMG");
         }
     }
-    void BoucingEffect()
+    void BoucingEffectExpObject()
     {
-        GameObject droppedObject = Instantiate(objectToDrop, transform.position, Quaternion.identity);
+        if (ExpObjectToDrop == null)
+        {
+            return;
+        }
+        GameObject droppedObject = Instantiate(ExpObjectToDrop, transform.position, Quaternion.identity);
         Rigidbody2D rb = droppedObject.AddComponent<Rigidbody2D>();
-        float bounceVelocity = 1f;
-        rb.velocity = new Vector2(Random.Range(-bounceVelocity, bounceVelocity), bounceVelocity);
+        float bounceVelocity = 0.5f;
+        Vector2 bounceDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        rb.velocity = bounceDirection * bounceVelocity;
+        rb.isKinematic = true;
+        float timeUntilRemove = 0.5f;
+        Destroy(rb, timeUntilRemove);
+    }
+
+    void BoucingEffectHealthSprite()
+    {
+        if (healthSpritePrefab == null)
+        {
+            return;
+        }
+        GameObject healthSprite = Instantiate(healthSpritePrefab, transform.position, Quaternion.identity);
+        Rigidbody2D rb = healthSprite.AddComponent<Rigidbody2D>();
+        float bounceVelocity = 0.5f;
+        Vector2 bounceDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        rb.velocity = bounceDirection * bounceVelocity;
         rb.isKinematic = true;
         float timeUntilRemove = 0.5f;
         Destroy(rb, timeUntilRemove);
@@ -46,12 +62,26 @@ public class Enemy : MonoBehaviour, IHitable
     {
         var textObject = Instantiate(amountOfDamagePrefab, canvas.transform);
         textObject.GetComponentInChildren<TextMeshProUGUI>().text = damageAmount.ToString();
-        StartCoroutine(DestroyAfterDelay(textObject));
+        // Dodaj efekt odskoku od przeciwnika
+        Vector3 randomOffset = new Vector3(Random.Range(-0.5f, 0.5f), yOffset, 0);
+        textObject.transform.position += randomOffset;
+
+        StartCoroutine(DestroyAfterDelay(textObject, destroyDelay));
     }
 
-    private IEnumerator DestroyAfterDelay(GameObject gameObject, float delay = 1f)
+    private IEnumerator DestroyAfterDelay(GameObject gameObject, float delay)
     {
         yield return new WaitForSeconds(delay);
+        float fadeTime = 0.5f;
+        float alpha = 1f;
+        while (alpha > 0f)
+        {
+            alpha -= Time.deltaTime / fadeTime;
+            var textColor = gameObject.GetComponentInChildren<TextMeshProUGUI>().color;
+            textColor.a = alpha;
+            gameObject.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
+            yield return null;
+        }
         Destroy(gameObject);
     }
 
@@ -83,16 +113,27 @@ public class Enemy : MonoBehaviour, IHitable
 
         ShowDamageText(damageAmount);
     }
+    public void DropHealthForPlayer()
+    {
+        if (Random.Range(0, 100) < dropChance)
+        {
+            healthSpritePrefab.GetComponent<HealthSpriteGoToPlayer>().SetTarget(FindObjectOfType<PlayerHealth>().gameObject);
+            BoucingEffectHealthSprite();
+        }
+    }
+
+    public void DropExpForPlayer()
+    {
+        ExpObjectToDrop.GetComponent<XPItem>().SetTarget(FindObjectOfType<ExperienceSystem>().gameObject);
+        BoucingEffectExpObject();
+    }
+
     void Die()
     {
         Destroy(gameObject);
-        BoucingEffect();
+        DropHealthForPlayer();
+        DropExpForPlayer();
         //kasa któr¹ dotajesz 
         MoneyManager.instance.AddMoney(moneyForKill);
-
-        //health
-        GameObject healthSprite = Instantiate(healthSpritePrefab, transform.position, Quaternion.identity);
-        healthSprite.GetComponent<HealthSpriteGoToPlayer>().SetTarget(FindObjectOfType<PlayerHealth>().gameObject);
     }
-
 }

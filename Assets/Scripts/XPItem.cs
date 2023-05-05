@@ -2,24 +2,40 @@ using UnityEngine;
 
 public class XPItem : MonoBehaviour
 {
-    public int xpAmount = 10;
+    public float speed = 5f;
+    public float pickupDistance = 1f;
+    [SerializeField] private Transform playerTarget;
+    public int xpAmount = 5;
 
-    public float pickupRange = 0.3f;
-
-    private void Update()
+    void Update()
     {
-        // Check if the player is within pickupRange of the object
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null && Vector2.Distance(transform.position, player.transform.position) <= pickupRange)
+        if (playerTarget == null)
         {
-            ExperienceSystem experienceManager = player.GetComponent<ExperienceSystem>();
-            if (experienceManager != null)
-            {
-                Debug.Log("masz XP");
-                experienceManager.AddXP(xpAmount);
-            }
-
-            Destroy(gameObject);
+            return;
         }
+        float distance = Vector2.Distance(transform.position, playerTarget.position);
+        if (distance <= pickupDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, playerTarget.position, speed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ExperienceSystem experienceSystem = other.GetComponent<ExperienceSystem>();
+            if (experienceSystem != null)
+            {
+                experienceSystem.AddXP(xpAmount);
+                Destroy(gameObject);
+                Debug.Log("Dostajesz tak¹ iloœæ HP: " + xpAmount);
+            }
+        }
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        playerTarget = target.transform;
     }
 }

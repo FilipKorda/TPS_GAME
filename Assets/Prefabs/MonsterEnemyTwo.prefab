@@ -118,9 +118,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   damageToPlayer: 1
+  enemyTransform: {fileID: 4043539082143527654}
   amountOfDamagePrefab: {fileID: 5347926975919826748, guid: 6782a01e1ce2d014ab2a3ddf610b7665, type: 3}
-  objectToDrop: {fileID: 880686741995913652, guid: 191efce91e0eca040be121ff5dd882e5, type: 3}
+  yOffset: 0.5
+  destroyDelay: 0.5
+  ExpObjectToDrop: {fileID: 880686741995913652, guid: 191efce91e0eca040be121ff5dd882e5, type: 3}
+  healthSpritePrefab: {fileID: 5889404392785703447, guid: 307885e9b20543a409fb8977b96c522a, type: 3}
+  dropChance: 30
   canvas: {fileID: 4043539083544312986}
+  moneyForKill: 10
 --- !u!114 &4043539082143527673
 MonoBehaviour:
   m_ObjectHideFlags: 0
