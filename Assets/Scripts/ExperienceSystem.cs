@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ExperienceSystem : MonoBehaviour
 {
-    [Header("==== Another Scripts ====")]
+    [Header("==== Another ====")]
     [Space(10)]
     public int currentLevel = 0;
     public int currentXP = 0;

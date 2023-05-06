@@ -21,7 +21,7 @@ public class CheckDestroyedObjects : MonoBehaviour
             if (Input.GetKeyDown(keyToCheck))
             {
                 StartCoroutine(DetectObjects());
-                Debug.Log("klikasz E i nie mo¿esz kupiæ Itemka bo masz za ma³o kasy");
+                //Debug.Log("klikasz E");
             }
         }
     }

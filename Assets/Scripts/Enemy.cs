@@ -62,12 +62,12 @@ public class Enemy : MonoBehaviour, IHitable
     {
         var textObject = Instantiate(amountOfDamagePrefab, canvas.transform);
         textObject.GetComponentInChildren<TextMeshProUGUI>().text = damageAmount.ToString();
-        // Dodaj efekt odskoku od przeciwnika
-        Vector3 randomOffset = new Vector3(Random.Range(-0.5f, 0.5f), yOffset, 0);
+        // Dodaj efekt przesuniêcia w pionie
+        Vector3 randomOffset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0f, yOffset), 0);
         textObject.transform.position += randomOffset;
-
         StartCoroutine(DestroyAfterDelay(textObject, destroyDelay));
     }
+
 
     private IEnumerator DestroyAfterDelay(GameObject gameObject, float delay)
     {
@@ -91,7 +91,6 @@ public class Enemy : MonoBehaviour, IHitable
         {
             return;
         }
-
         var hitObject = hit.collider.gameObject;
         var hitComponent = hitObject.GetComponent<IHitable>();
         if (hitComponent == null)

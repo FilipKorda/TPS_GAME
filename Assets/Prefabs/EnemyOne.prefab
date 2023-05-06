@@ -34,7 +34,7 @@ RectTransform:
   m_Children:
   - {fileID: 4531103415707577108}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -123,9 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damageToPlayer: 50
-  enemyTransform: {fileID: 4531103414853522891}
   amountOfDamagePrefab: {fileID: 5347926975919826748, guid: 6782a01e1ce2d014ab2a3ddf610b7665, type: 3}
-  yOffset: 0.3
+  duration: 1
+  yOffset: 0.7
   destroyDelay: 0.5
   ExpObjectToDrop: {fileID: 880686741995913652, guid: 191efce91e0eca040be121ff5dd882e5, type: 3}
   healthSpritePrefab: {fileID: 5889404392785703447, guid: 307885e9b20543a409fb8977b96c522a, type: 3}
