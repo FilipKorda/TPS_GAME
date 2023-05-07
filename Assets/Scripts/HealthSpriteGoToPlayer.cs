@@ -8,7 +8,6 @@ public class HealthSpriteGoToPlayer : MonoBehaviour
     public float pickupDistance = 1f;
     [SerializeField] private Transform playerTarget;
     public int healthToAdd = 5;
-    //[SerializeField] private PlayerHealth playerHealth;
 
     void Update()
     {

@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8379118500674153749
 SpriteRenderer:
@@ -98,15 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d88f1e1b7bb084f9204f1e44e11f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceSystem: {fileID: 0}
+  playerController: {fileID: 0}
   description: Press E to Gamble!
+  descriptionStatusMoney: Not enough money to purchase
+  descriptionWhatYouGot: You got this!
   descriptionText: {fileID: 0}
+  statusMoneyText: {fileID: 0}
+  showWhatYouGotText: {fileID: 0}
   isRolling: 0
   canRoll: 0
-  chanceOfMoney: 10
-  chanceOfDamage: 10
-  chanceOfSpeed: 10
-  chanceOfAttackSpeed: 50
-  gameObjectToActivate: {fileID: 0}
+  minMoneyToRoll: 250
 --- !u!58 &8379118500674153750
 CircleCollider2D:
   m_ObjectHideFlags: 0
