@@ -1,5 +1,6 @@
 using System.Xml.Serialization;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class InteractWithNPC : MonoBehaviour
@@ -8,21 +9,22 @@ public class InteractWithNPC : MonoBehaviour
     public float interactionDistance = 1f;
     public GameObject interactPrompt;
     public GameObject NPC;
-    public LayerMask layerMask; 
+    public LayerMask layerMask;
     public KeyCode interactKey = KeyCode.E;
     private bool canInteract = false;
     public string descriptionInteract = "Press E to interact with NPC";
     [SerializeField] public TextMeshProUGUI interactText;
+    public bool isInteracting = false;
 
     void Update()
     {
-
-        InteractWithNpc();
+        InteractWithNpcc();
+        CheckDistance();
     }
 
-    private void InteractWithNpc()
+
+    private void InteractWithNpcc()
     {
-        CheckDistance();
         if (canInteract && Input.GetKeyDown(interactKey))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, interactionDistance, layerMask);
@@ -32,14 +34,14 @@ public class InteractWithNPC : MonoBehaviour
                 if (npcDialogue != null)
                 {
                     npcDialogue.StartDialogue();
+                    isInteracting = true;               
                 }
-        
             }
         }
     }
 
     private void CheckDistance()
-    {     
+    {
         if (Vector3.Distance(transform.position, NPC.transform.position) < showAboveHead)
         {
             if (Vector3.Distance(transform.position, NPC.transform.position) < interactionDistance)
@@ -57,8 +59,17 @@ public class InteractWithNPC : MonoBehaviour
         else
         {
             canInteract = false;
+            if (!isInteracting)
+            {
+                interactPrompt.SetActive(false);
+                interactText.text = "";
+            }
+        }
+        if (isInteracting)
+        {
+            interactText.gameObject.SetActive(false);
             interactPrompt.SetActive(false);
-            interactText.text = "";
-        }       
-    }    
+        }
+    }
+
 }

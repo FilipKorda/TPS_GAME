@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI characterNameText;
     public TextMeshProUGUI dialogueText;
-    private float typingSpeed = 0.01f;
+    public Image portraitImage;
     private Queue<string> sentences;
 
     public void StartDialogue(Dialogue dialogue)
     {
-        nameText.text = dialogue.name;
+        characterNameText.text = dialogue.Name1;
 
         sentences = new Queue<string>();
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue.sentences1)
         {
             sentences.Enqueue(sentence);
         }
@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-    }
+    }  
 
     IEnumerator TypeSentence(string sentence)
     {
@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 

@@ -319,10 +319,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fefa3280d3a3d43a6d965c7fb27111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 1
+  showAboveHead: 10
+  interactionDistance: 0.4
+  interactPrompt: {fileID: 0}
+  NPC: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  interactKey: 101
+  descriptionInteract: Press E to interact with NPC
+  interactText: {fileID: 0}
+  isInteracting: 0
 --- !u!1 &1625472404580485866
 GameObject:
   m_ObjectHideFlags: 0
