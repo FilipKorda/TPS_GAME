@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2261382872053716914}
   - component: {fileID: 2261382872053716927}
   - component: {fileID: 2261382872053716926}
+  - component: {fileID: 257966315}
   m_Layer: 8
   m_Name: NPC
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2261382873182964937}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2261382872053716914
 SpriteRenderer:
@@ -115,22 +116,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    Name1: Szpieg
-    Image1: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences1:
-    - 'A jak '
-    - 'nie '
-    - to nastepna proba
-    Name2: Ja
-    Image2: {fileID: 21300000, guid: 0fb97522b3776df449d2227dbbc3ef70, type: 3}
-    sentences2:
-    - 'moze '
-    - teraz
-    - A co
+  conversation:
+  - name: Pierwsza osoba
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: Pierwsza osoba
+  - name: Pierwsza osoba
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: Pierwsza osoba drugi dialog
+  - name: Druga Osoba
+    portrait: {fileID: 21300000, guid: b041307f1c6cc9b45a70df0240fccb3a, type: 3}
+    sentences: Druga Osoba
+  - name: Pierwsza osoba
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: Pierwsza osoba trzeci dialog
+  - name: Druga Osoba
+    portrait: {fileID: 21300000, guid: b041307f1c6cc9b45a70df0240fccb3a, type: 3}
+    sentences: Druga Osoba drugi dialog
+  - name: Trzecia Osoba
+    portrait: {fileID: 21300000, guid: e13bc33d18cb0274da12906694351d62, type: 3}
+    sentences: Trzecia Osoba
   dialogueManager: {fileID: 0}
   interactWithNPC: {fileID: 0}
   dialogueBox: {fileID: 0}
+--- !u!114 &257966315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261382872053716915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showAboveHead: 10
+  interactionDistance: 1
+  interactPrompt: {fileID: 2261382873182964943}
+  player: {fileID: 0}
+  interactText: {fileID: 0}
+  interactWithNPC: {fileID: 0}
+  descriptionInteract: Press E to interact with NPC
 --- !u!1 &2261382873182964943
 GameObject:
   m_ObjectHideFlags: 0
