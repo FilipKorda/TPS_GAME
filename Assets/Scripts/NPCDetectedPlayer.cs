@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class NPCDetectedPlayer : MonoBehaviour
 {
-    public float showAboveHead = 10f;
-    public float interactionDistance = 1f;
+    public float distanceToShowPromptAboveHead = 10f;
+    public float distanceToInteractWithPlayer = 0.5f;
     public GameObject interactPrompt;
     public Transform player;
-    [SerializeField] private TextMeshProUGUI interactText;
+    public bool inRangeToInteract = false;
     [SerializeField] private InteractWithNPC interactWithNPC;
-    public string descriptionInteract = "Press E to interact with NPC";
-    private bool isInteracting = false;
+    [SerializeField] private NPCDialogue nPCDialogue;
 
 
     private void Update()
@@ -22,33 +21,35 @@ public class NPCDetectedPlayer : MonoBehaviour
 
     private void CheckDistance()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < showAboveHead)
+        if (Vector3.Distance(transform.position, player.transform.position) < distanceToShowPromptAboveHead)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) < interactionDistance)
+            interactPrompt.SetActive(true);
+
+            if (Vector3.Distance(transform.position, player.transform.position) < distanceToInteractWithPlayer)
             {
-                interactWithNPC.canInteract = true;
-                interactText.text = descriptionInteract;
+                inRangeToInteract = true;
+                interactWithNPC.interactText.text = interactWithNPC.descriptionInteract;
             }
             else
             {
-                interactWithNPC.canInteract = false;
-                interactText.text = "";
+                inRangeToInteract = false;
+                interactWithNPC.interactText.text = "";
             }
-            interactPrompt.SetActive(true);
-        }
+        }  
         else
         {
-            interactWithNPC.canInteract = false;
-            if (!isInteracting)
-            {
-                interactPrompt.SetActive(false);
-                interactText.text = "";
-            }
-        }
-        if (isInteracting)
-        {
-            interactText.gameObject.SetActive(false);
             interactPrompt.SetActive(false);
+        }
+
+        if(interactWithNPC.isInteracting)
+        {
+            interactPrompt.SetActive(false);
+            interactWithNPC.interactText.text = "";
+        } 
+        if(nPCDialogue.dialogueCompleted)
+        {
+            interactPrompt.SetActive(false);
+            interactWithNPC.interactText.text = "";
         }
     }
 }

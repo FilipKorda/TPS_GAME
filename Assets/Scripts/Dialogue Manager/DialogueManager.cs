@@ -36,9 +36,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentenceQueue.Dequeue();
 
     }
-
     
-
     void NextDialogue()
     {
         Debug.Log("Nastepny dialog");

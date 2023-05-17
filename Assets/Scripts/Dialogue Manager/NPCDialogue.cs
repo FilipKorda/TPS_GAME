@@ -15,12 +15,13 @@ public class NPCDialogue : MonoBehaviour
     public GameObject dialogueBox;
     private Dialogue dialogue;
     private int index = 0;
-    private bool dialogueCompleted = false;
+    public bool dialogueCompleted = false;
 
     public void StartDialogue()
     {
         if (!dialogueCompleted)
         {
+            interactWithNPC.isInteracting = true;
             SetDialogue(conversation[0]);
             dialogueManager.StartDialogue(dialogue);
             Time.timeScale = 0f;
@@ -53,6 +54,19 @@ public class NPCDialogue : MonoBehaviour
         dialogueBox.SetActive(false);
         index = 0;
         dialogueCompleted = true;
+        interactWithNPC.isInteracting = false;
         Debug.Log("Koniec Dialogu");
+    }
+
+    public void LastSentance()
+    {
+        if (dialogueCompleted)
+        {
+            // Tutaj umieœæ kod wywo³uj¹cy funkcjê ostatniego dialogu
+        }
+        else
+        {
+            StartDialogue();
+        }
     }
 }
