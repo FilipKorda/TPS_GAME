@@ -35,6 +35,7 @@ public class NPCDetectedPlayer : MonoBehaviour
                 inRangeToInteract = false;
                 interactWithNPC.interactText.text = "";
             }
+           
         }  
         else
         {
@@ -45,11 +46,10 @@ public class NPCDetectedPlayer : MonoBehaviour
         {
             interactPrompt.SetActive(false);
             interactWithNPC.interactText.text = "";
-        } 
-        if(nPCDialogue.dialogueCompleted)
+        }
+        if (nPCDialogue.dialogueCompleted)
         {
             interactPrompt.SetActive(false);
-            interactWithNPC.interactText.text = "";
         }
     }
 }

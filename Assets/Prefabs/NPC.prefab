@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2261382873182964937}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2261382872053716914
 SpriteRenderer:
@@ -117,27 +117,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-  - name: Pierwsza osoba
+  - name: Ty
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: "Hej, kim jeste\u015B?"
+  - name: Ty
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: "Mam wiele pyta\u0144!"
+  - name: Nieznajomy
     portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: Pierwsza osoba
-  - name: Pierwsza osoba
+    sentences: Witaj, nazywam sie Szpieg!
+  - name: Szpieg
     portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: Pierwsza osoba drugi dialog
-  - name: Druga Osoba
-    portrait: {fileID: 21300000, guid: b041307f1c6cc9b45a70df0240fccb3a, type: 3}
-    sentences: Druga Osoba
-  - name: Pierwsza osoba
+    sentences: Jakie masz paytania?
+  - name: Ty
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: Co to jest za miejsce?
+  - name: Szpieg
     portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: Pierwsza osoba trzeci dialog
-  - name: Druga Osoba
-    portrait: {fileID: 21300000, guid: b041307f1c6cc9b45a70df0240fccb3a, type: 3}
-    sentences: Druga Osoba drugi dialog
-  - name: Trzecia Osoba
-    portrait: {fileID: 21300000, guid: e13bc33d18cb0274da12906694351d62, type: 3}
-    sentences: Trzecia Osoba
+    sentences: "Zapomnaine, opuszczone miejsce zwane {XxX}, w mie\u015Bcie jest bezpiecznie!"
+  - name: Szpieg
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: "Lecz znajduj\u0105 sie te\u017C lochy do kt\xF3rych si\u0119 nie
+      zbli\u017Caj!"
+  - name: Szpieg
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: "Id\u017A pogadaj z moim bratem!"
+  - name: Ty
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: "Dobrze, \u017Cegnaj!"
   dialogueManager: {fileID: 0}
   interactWithNPC: {fileID: 0}
   dialogueBox: {fileID: 0}
+  dialogueCompleted: 0
 --- !u!114 &257966315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,13 +161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showAboveHead: 10
-  interactionDistance: 1
+  distanceToShowPromptAboveHead: 5
+  distanceToInteractWithPlayer: 0.5
   interactPrompt: {fileID: 2261382873182964943}
   player: {fileID: 0}
-  interactText: {fileID: 0}
+  inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  descriptionInteract: Press E to interact with NPC
+  nPCDialogue: {fileID: 2261382872053716926}
 --- !u!1 &2261382873182964943
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1979009778}
   - component: {fileID: 1979009780}
   - component: {fileID: 1979009791}
+  - component: {fileID: 1979009785}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -39,7 +40,7 @@ Transform:
   m_Children:
   - {fileID: 1625472404580485867}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1625472404133994907
 SpriteRenderer:
@@ -319,17 +320,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fefa3280d3a3d43a6d965c7fb27111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showAboveHead: 10
-  interactionDistance: 0.4
-  interactPrompt: {fileID: 0}
-  NPC: {fileID: 0}
+  interactText: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
   interactKey: 101
   descriptionInteract: Press E to interact with NPC
-  interactText: {fileID: 0}
   isInteracting: 0
+--- !u!114 &1979009785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625472404133994906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175e11bdbb5c2014eb7fcf8c38d30af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {fileID: 0}
+  teleportDistance: 100
+  description: Press E to teleport to Center
+  descriptionText: {fileID: 0}
+  fadeOutInPanelImage: {fileID: 0}
 --- !u!1 &1625472404580485866
 GameObject:
   m_ObjectHideFlags: 0

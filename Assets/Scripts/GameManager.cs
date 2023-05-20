@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartTimer();
-        startGame.Play("ShowHpBarAnimation");
+        if(startGame != null)
+        {
+            startGame.Play("ShowHpBarAnimation");
+        }       
     }
 
     void Update()

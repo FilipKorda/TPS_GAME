@@ -206,9 +206,6 @@ public class RandomStats : MonoBehaviour
     }
     void StopRotatingAndShowWhatUGot()
     {
-
-        showWhatYouGotText.enabled = true;
-        showWhatYouGotText.text = descriptionWhatYouGot;
         StartCoroutine(HideWhatYouGotText(2f));
         isRotating = false;
     }
@@ -220,7 +217,6 @@ public class RandomStats : MonoBehaviour
     IEnumerator HideWhatYouGotText(float delay)
     {
         yield return new WaitForSeconds(delay);
-        showWhatYouGotText.enabled = false;
         showWhatYouGotText.text = "";
     }
 }

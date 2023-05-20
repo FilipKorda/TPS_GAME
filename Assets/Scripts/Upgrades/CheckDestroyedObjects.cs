@@ -42,7 +42,6 @@ public class CheckDestroyedObjects : MonoBehaviour
                     break;
                 }
             }
-
             if (!allObjectsIntact)
             {
                 CleanUpList(objectsToDetect);
@@ -56,6 +55,8 @@ public class CheckDestroyedObjects : MonoBehaviour
                 Debug.Log("a tu odpalasz teleport");
             }
         }
+
+
     }
 
     private void CleanUpList(List<GameObject> listToClean)

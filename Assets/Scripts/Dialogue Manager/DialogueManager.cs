@@ -20,6 +20,14 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    public void StartLastDialogue(LastDialogue lastDialogue)
+    {
+        characterNameText.text = lastDialogue.lastName;
+        portraitImage.sprite = lastDialogue.lastPortrait;
+        sentenceQueue = new Queue<string>();
+        DisplayNextSentence();
+    }
+
     public void DisplayNextSentence()
     {
         if (isDisplayingSentence)
