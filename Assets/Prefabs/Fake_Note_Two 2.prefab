@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8557554476411673106
+--- !u!1 &2216633218092002045
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8557554476411673105}
-  - component: {fileID: 8557554476411673104}
-  - component: {fileID: 8557554476411673103}
-  - component: {fileID: -5212045458961974114}
+  - component: {fileID: 2216633218092002047}
+  - component: {fileID: 2216633218092002046}
+  - component: {fileID: 2216633218092002033}
+  - component: {fileID: 2216633218092002032}
   m_Layer: 0
-  m_Name: Bank_note_Three
+  m_Name: Fake_Note_Two 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8557554476411673105
+--- !u!4 &2216633218092002047
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557554476411673106}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.72, y: 3.827, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_GameObject: {fileID: 2216633218092002045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -86.15, y: 5.77, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8557554476411673104
+--- !u!212 &2216633218092002046
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557554476411673106}
+  m_GameObject: {fileID: 2216633218092002045}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bce7cdec966a70849a6576b324c2454c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2045a651f379b3f46b99255266402b76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,20 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8557554476411673103
+--- !u!61 &2216633218092002033
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557554476411673106}
+  m_GameObject: {fileID: 2216633218092002045}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.022287413, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,18 +110,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5954251, y: 0.64}
+  m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &-5212045458961974114
+--- !u!114 &2216633218092002032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557554476411673106}
+  m_GameObject: {fileID: 2216633218092002045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d9d8cdbef39ab4a8d21f98395bece6, type: 3}
+  m_Script: {fileID: 11500000, guid: b8a02c31911554348a118fb553b6d3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: Press E to Read Note
@@ -129,7 +129,7 @@ MonoBehaviour:
   descriptionTextObjectName: Press 'E' to teleport
   descriptionOfTheNoteText: {fileID: 0}
   descriptionOfTheNoteName: Description Of The Note Text
-  goodSentanceNote:
-    sentences: "Sejf hotelowy: Inteligentny sejf z elektronicznym kodem, kt\xF3ry
-      umo\u017Cliwia go\u015Bciom bezpieczne przechowywanie swoich warto\u015Bciowych
-      przedmiot\xF3w podczas pobytu w hotelu, zapewniaj\u0105c im spokojn\u0105 noc"
+  sentanceNote:
+    sentences: "Gdy \u015Bwiat gier wstrzyma\u0142 oddech, b\u0142\u0119dne kody
+      bankowe wpl\u0105ta\u0142y si\u0119 w niemo\u017Cliwe do rozwik\u0142ania tajemnice,
+      czekaj\u0105c na mistrza rozwi\u0105zywania zagadek, by uwolni\u0142 ich potencja\u0142."

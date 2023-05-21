@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2379725902427678208}
   - component: {fileID: 2379725902427678209}
   - component: {fileID: 2379725902427678222}
+  - component: {fileID: 5838482839169567157}
   m_Layer: 0
   m_Name: Bank_note_Fourth
   m_TagString: Untagged
@@ -111,3 +112,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6993757, y: 0.86442864}
   m_EdgeRadius: 0
+--- !u!114 &5838482839169567157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379725902427678211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630c615b3cf97f54291f6c145132790f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Press E to Read Note
+  descriptionText: {fileID: 0}
+  descriptionTextObjectName: Press 'E' to teleport
+  descriptionOfTheNoteText: {fileID: 0}
+  descriptionOfTheNoteName: Description Of The Note Text
+  goodSentanceNote:
+    sentences: "Sejf wodoodporny i ognioodporny: Specjalnie zaprojektowany sejf,
+      kt\xF3ry jest odporny na zalanie wod\u0105 i chroni zawarto\u015B\u0107 przed
+      wysokimi temperaturami, zapewniaj\u0105c podw\xF3jn\u0105 ochron\u0119 w przypadku
+      kl\u0119sk \u017Cywio\u0142owych."

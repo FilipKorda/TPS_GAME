@@ -9,6 +9,7 @@ public class MoneyBags : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySFX("PickUpCash");
             Destroy(gameObject);
             MoneyManager.instance.AddMoney(2);
         }

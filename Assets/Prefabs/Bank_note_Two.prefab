@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8777142613761844876}
   - component: {fileID: 8777142613761844877}
   - component: {fileID: 8777142613761844978}
+  - component: {fileID: -6281088458785681463}
   m_Layer: 0
   m_Name: Bank_note_Two
   m_TagString: Untagged
@@ -111,3 +112,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7262268, y: 0.71537733}
   m_EdgeRadius: 0
+--- !u!114 &-6281088458785681463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777142613761844879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047400f1d5ebdf04e985f13910c4bbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Press E to Read Note
+  descriptionText: {fileID: 0}
+  descriptionTextObjectName: Press 'E' to teleport
+  descriptionOfTheNoteText: {fileID: 0}
+  descriptionOfTheNoteName: Description Of The Note Text
+  goodSentanceNote:
+    sentences: "Sejf \u015Bcienne: Solidne stalowe \u015Bciany i zaawansowane zamki
+      mechaniczne sprawiaj\u0105, \u017Ce sejf ten jest doskona\u0142ym rozwi\u0105zaniem
+      dla domu lub biura, chroni\u0105c cenne przedmioty przed niepowo\u0142anym
+      dost\u0119pem"

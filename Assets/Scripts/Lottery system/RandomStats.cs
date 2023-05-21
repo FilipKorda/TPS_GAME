@@ -45,8 +45,6 @@ public class RandomStats : MonoBehaviour
             attackSpeed
         };
     }
-
-
     void OnTriggerStay2D(Collider2D other)
     {
         if (!hasRolled)
@@ -62,11 +60,7 @@ public class RandomStats : MonoBehaviour
                 descriptionText.enabled = false;
                 descriptionText.text = "";
             }
-
         }
-
-
-
     }
     void OnTriggerExit2D(Collider2D other)
     {

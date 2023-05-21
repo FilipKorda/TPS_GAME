@@ -1,24 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections;
 
-public class Safe : MonoBehaviour
+public class ThirdSafe : MonoBehaviour
 {
     private bool canOpen = false;
-    public string description = "Press E to PickUp Key";
+    public string description = "Press E to Open Safe";
+    public string dontKnowDescription = "Nie znasz kodu do: ";
     public TextMeshProUGUI descriptionText;
+    public TextMeshProUGUI dontKnowDescriptionText;
     [SerializeField] private GameObject goldObjectToDrop;
+    [SerializeField] private GameObject greenCheckMark;
     public float delay = 5f;
     public Slider progressBar;
     private float timer;
     private bool isOpened = false;
     private Coroutine countdownCoroutine;
-    public bool knowHowToUnlockSafe = false;
-    public bool knowCodeToSafeOne = false;
-    public bool knowCodeToSafeTwo = false;
-    public bool knowCodeToSafeThree = false;
-    public bool knowCodeToSafeFourth = false;
 
     private void Start()
     {
@@ -27,10 +26,7 @@ public class Safe : MonoBehaviour
 
     private void Update()
     {
-        if (!(isOpened || !canOpen || !knowHowToUnlockSafe || !knowCodeToSafeOne || !Input.GetKeyDown(KeyCode.E))
-            || !(isOpened || !canOpen || !knowHowToUnlockSafe || !knowCodeToSafeTwo || !Input.GetKeyDown(KeyCode.E))
-            || !(isOpened || !canOpen || !knowHowToUnlockSafe || !knowCodeToSafeThree || !Input.GetKeyDown(KeyCode.E))
-            || !(isOpened || !canOpen || !knowHowToUnlockSafe || !knowCodeToSafeFourth || !Input.GetKeyDown(KeyCode.E)))
+        if (!isOpened && canOpen && CorrectThirdSafeNote.knowCodeToSafeThree && Input.GetKeyDown(KeyCode.E))
         {
             if (countdownCoroutine == null)
             {
@@ -38,10 +34,17 @@ public class Safe : MonoBehaviour
                 countdownCoroutine = StartCoroutine(StartCountdown());
             }
         }
+        else if (!isOpened && canOpen && !CorrectThirdSafeNote.knowCodeToSafeThree && Input.GetKeyDown(KeyCode.E))
+        {
+            AudioManager.Instance.PlaySFX("RejectSafeCode");
+            dontKnowDescriptionText.text = dontKnowDescription;
+            StartCoroutine(HideWhatYouGotText(2f));
+        }
     }
 
     private IEnumerator StartCountdown()
     {
+        AudioManager.Instance.PlaySFX("EnterCodeSafe");
         Time.timeScale = 0;
         progressBar.gameObject.SetActive(true);
 
@@ -55,10 +58,15 @@ public class Safe : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         SafeIsOpen();
         isOpened = true;
+        greenCheckMark.SetActive(true);
         Time.timeScale = 1;
         countdownCoroutine = null;
     }
-
+    IEnumerator HideWhatYouGotText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        dontKnowDescriptionText.text = "";
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

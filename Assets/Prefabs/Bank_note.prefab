@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6999869600638159592}
   - component: {fileID: 6999869600638159595}
   - component: {fileID: 6999869600638159594}
+  - component: {fileID: 2247611241187797944}
   m_Layer: 0
   m_Name: Bank_note
   m_TagString: Untagged
@@ -111,3 +112,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2247611241187797944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999869600638159593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646da41513b537b46b747cfd2fc17d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Press E to Read Note
+  descriptionText: {fileID: 0}
+  descriptionTextObjectName: Press 'E' to teleport
+  descriptionOfTheNoteText: {fileID: 0}
+  descriptionOfTheNoteName: Description Of The Note Text
+  goodSentanceNote:
+    sentences: "Sejf elektroniczny: Innowacyjne zabezpieczenia biometryczne i kodowe
+      tworz\u0105 nieprzebijaln\u0105 os\u0142on\u0119 dla cennych przedmiot\xF3w,
+      dost\u0119p do kt\xF3rych uzyskuje si\u0119 za pomoc\u0105 unikalnego identyfikatora."
+  knowHowToUnlockSafe: 0
+  knowCodeToSafeOne: 0

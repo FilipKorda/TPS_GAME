@@ -40,7 +40,7 @@ Transform:
   m_Children:
   - {fileID: 1625472404580485867}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1625472404133994907
 SpriteRenderer:
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 0}
-  teleportDistance: 100
+  teleportDistance: 250
   description: Press E to teleport to Center
   descriptionText: {fileID: 0}
   fadeOutInPanelImage: {fileID: 0}
