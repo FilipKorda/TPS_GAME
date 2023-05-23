@@ -122,12 +122,6 @@ public class HardCrate : MonoBehaviour
         {
             canOpen = false;
             descriptionText.text = "";
-            if (countdownCoroutine != null)
-            {
-                StopCoroutine(countdownCoroutine);
-                countdownCoroutine = null;
-            }
-            progressBar.gameObject.SetActive(false);
         }
     }
     private void BoucingEffectObject()

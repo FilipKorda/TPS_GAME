@@ -1510,6 +1510,90 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68781537, y: 0.676721}
   m_EdgeRadius: 0
+--- !u!1 &136499374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136499375}
+  - component: {fileID: 136499376}
+  m_Layer: 8
+  m_Name: ExclamationMark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &136499375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136499374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1311949487}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &136499376
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136499374}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: fb492c3e99af0764ba044fabcc33412f, type: 3}
+  m_Color: {r: 1, g: 0.8258381, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &142049702
 GameObject:
   m_ObjectHideFlags: 0
@@ -6272,7 +6356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 0}
   player: {fileID: 0}
-  description: Press E to Move Down Staits
+  description: Press E to Move Down Stairs
   descriptionText: {fileID: 0}
   speed: 0.215
   fadeOutInPanelImage: {fileID: 0}
@@ -7184,7 +7268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801629228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -77, y: 22.08, z: 0}
+  m_LocalPosition: {x: -78, y: 34.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8504,6 +8588,90 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!1 &958710270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 958710271}
+  - component: {fileID: 958710272}
+  m_Layer: 8
+  m_Name: ExclamationMark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &958710271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958710270}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2118860964}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &958710272
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958710270}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: fb492c3e99af0764ba044fabcc33412f, type: 3}
+  m_Color: {r: 1, g: 0.8258381, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &990916184
 GameObject:
   m_ObjectHideFlags: 0
@@ -11732,7 +11900,9 @@ GameObject:
   - component: {fileID: 1311949486}
   - component: {fileID: 1311949488}
   - component: {fileID: 1311949489}
-  m_Layer: 0
+  - component: {fileID: 1771335549}
+  - component: {fileID: 1771335550}
+  m_Layer: 8
   m_Name: Hospital_Nurse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11750,7 +11920,8 @@ Transform:
   m_LocalPosition: {x: -29.839996, y: -12.589999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 136499375}
   m_Father: {fileID: 2348542104895671152}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11842,7 +12013,7 @@ MonoBehaviour:
     sentences: "Ten szpital mnie przera\u017Ca!"
   - name: Pielegniarka
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Ci\u0105gle przychodz\u0105 nowi pajcieci!"
+    sentences: "Nie przychodz\u0105 nowi pajcieci! Ciekawe jaka jest przyczyna tego?"
   lastConversation:
   - lastName: Pielegniarka
     lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
@@ -11852,6 +12023,128 @@ MonoBehaviour:
   dialogueBox: {fileID: 0}
   dialogueCompleted: 0
   lastDialogueAvailable: 0
+  hammer: {fileID: 0}
+  crossbar: {fileID: 0}
+  chisel: {fileID: 0}
+--- !u!114 &1771335549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311949485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToShowPromptAboveHead: 5
+  distanceToInteractWithPlayer: 0.5
+  interactPrompt: {fileID: 136499374}
+  player: {fileID: 0}
+  inRangeToInteract: 0
+  interactWithNPC: {fileID: 0}
+  nPCDialogue: {fileID: 1311949489}
+--- !u!58 &1771335550
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311949485}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32
+--- !u!1 &1318607745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318607746}
+  - component: {fileID: 1318607747}
+  m_Layer: 8
+  m_Name: ExclamationMark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1318607746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318607745}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1745853790}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1318607747
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318607745}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: fb492c3e99af0764ba044fabcc33412f, type: 3}
+  m_Color: {r: 1, g: 0.8258381, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1324524893
 GameObject:
   m_ObjectHideFlags: 0
@@ -13805,7 +14098,9 @@ GameObject:
   - component: {fileID: 1575835800}
   - component: {fileID: 1575835799}
   - component: {fileID: 1575835801}
-  m_Layer: 0
+  - component: {fileID: 347703341}
+  - component: {fileID: 347703342}
+  m_Layer: 8
   m_Name: Hospital_Nurse 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13823,7 +14118,8 @@ Transform:
   m_LocalPosition: {x: 2.87, y: -13.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2106597301}
   m_Father: {fileID: 2348542104895671152}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13914,10 +14210,12 @@ MonoBehaviour:
   conversation:
   - name: Pielegniarka
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Pilnuje tego miejsaca i zajmuje sie pacj\u0119tami!"
+    sentences: "Pilnuje tego miejsaca i zajmuje sie pacj\u0119tami! Ale jest ich
+      zdecydowanie mniej ni\u017C wcze\u015Bniej."
   - name: Pielegniarka
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Przeszuka\u0142e\u015B ju\u017C ca\u0142y szpital?"
+    sentences: "Przeszuka\u0142e\u015B ju\u017C ca\u0142y szpital? Pono\u0107 Radio
+      na dachu nie dzia\u0142a!"
   lastConversation:
   - lastName: Pielegniarka
     lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
@@ -13927,6 +14225,44 @@ MonoBehaviour:
   dialogueBox: {fileID: 0}
   dialogueCompleted: 0
   lastDialogueAvailable: 0
+  hammer: {fileID: 0}
+  crossbar: {fileID: 0}
+  chisel: {fileID: 0}
+--- !u!114 &347703341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575835797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToShowPromptAboveHead: 5
+  distanceToInteractWithPlayer: 0.5
+  interactPrompt: {fileID: 2106597300}
+  player: {fileID: 0}
+  inRangeToInteract: 0
+  interactWithNPC: {fileID: 0}
+  nPCDialogue: {fileID: 1575835801}
+--- !u!58 &347703342
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575835797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32
 --- !u!1 &1604283647
 GameObject:
   m_ObjectHideFlags: 0
@@ -15316,7 +15652,9 @@ GameObject:
   - component: {fileID: 1745853789}
   - component: {fileID: 1745853791}
   - component: {fileID: 1745853792}
-  m_Layer: 0
+  - component: {fileID: 1079886757}
+  - component: {fileID: 1079886758}
+  m_Layer: 8
   m_Name: Hospital_Nurse 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15334,7 +15672,8 @@ Transform:
   m_LocalPosition: {x: -4.3399963, y: -24.239998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1318607746}
   m_Father: {fileID: 2348542104895671152}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15424,7 +15763,10 @@ MonoBehaviour:
   conversation:
   - name: Pielegniarka
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Chodze sobie po prostu! Bo nie wiem co robi\u0107"
+    sentences: "Chodze sobie po prostu! Bo nie wiem co robi\u0107!"
+  - name: Pielegniarka
+    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
+    sentences: "Od kiedy Radio nie dzia\u0142a to jest zdecydowanie mniej pacj\u0119t\xF3w!"
   lastConversation:
   - lastName: Pielegniarka
     lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
@@ -15434,6 +15776,44 @@ MonoBehaviour:
   dialogueBox: {fileID: 0}
   dialogueCompleted: 0
   lastDialogueAvailable: 0
+  hammer: {fileID: 0}
+  crossbar: {fileID: 0}
+  chisel: {fileID: 0}
+--- !u!114 &1079886757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745853788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToShowPromptAboveHead: 5
+  distanceToInteractWithPlayer: 0.5
+  interactPrompt: {fileID: 1318607745}
+  player: {fileID: 0}
+  inRangeToInteract: 0
+  interactWithNPC: {fileID: 0}
+  nPCDialogue: {fileID: 1745853792}
+--- !u!58 &1079886758
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745853788}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32
 --- !u!1 &1746126868
 GameObject:
   m_ObjectHideFlags: 0
@@ -19365,6 +19745,90 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.45
+--- !u!1 &2106597300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106597301}
+  - component: {fileID: 2106597302}
+  m_Layer: 8
+  m_Name: ExclamationMark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2106597301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106597300}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1575835798}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2106597302
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106597300}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: fb492c3e99af0764ba044fabcc33412f, type: 3}
+  m_Color: {r: 1, g: 0.8258381, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2106696685
 GameObject:
   m_ObjectHideFlags: 0
@@ -19522,7 +19986,9 @@ GameObject:
   - component: {fileID: 2118860963}
   - component: {fileID: 2118860965}
   - component: {fileID: 2118860966}
-  m_Layer: 0
+  - component: {fileID: 227164080}
+  - component: {fileID: 227164081}
+  m_Layer: 8
   m_Name: Hospital_Nurse2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19540,7 +20006,8 @@ Transform:
   m_LocalPosition: {x: -8.449997, y: -1.0999994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 958710271}
   m_Father: {fileID: 2348542104895671152}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19639,6 +20106,44 @@ MonoBehaviour:
   dialogueBox: {fileID: 0}
   dialogueCompleted: 0
   lastDialogueAvailable: 0
+  hammer: {fileID: 0}
+  crossbar: {fileID: 0}
+  chisel: {fileID: 0}
+--- !u!114 &227164080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118860962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToShowPromptAboveHead: 5
+  distanceToInteractWithPlayer: 0.5
+  interactPrompt: {fileID: 958710270}
+  player: {fileID: 0}
+  inRangeToInteract: 0
+  interactWithNPC: {fileID: 0}
+  nPCDialogue: {fileID: 2118860966}
+--- !u!58 &227164081
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118860962}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32
 --- !u!1 &2127584379
 GameObject:
   m_ObjectHideFlags: 0
@@ -20404,7 +20909,7 @@ Transform:
   - {fileID: 1745853790}
   - {fileID: 1575835798}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2471857634450518289
 GameObject:

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2131032547862921352}
   - component: {fileID: 2131032547862921359}
   - component: {fileID: -4649985042111244149}
+  - component: {fileID: 707813526}
   m_Layer: 0
   m_Name: Wires_ObjectToCompleteRadioQuest
-  m_TagString: Untagged
+  m_TagString: Wires
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,3 +102,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.48
+--- !u!114 &707813526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131032547862921358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13966c6239038c9438cdc38a4b90795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Press E to Pick Up Wires
+  descriptionText: {fileID: 0}
+  descriptionTextObjectName: Press 'E' to teleport

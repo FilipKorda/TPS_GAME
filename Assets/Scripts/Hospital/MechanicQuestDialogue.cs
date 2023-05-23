@@ -1,10 +1,8 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
-public class NPCDialogue : MonoBehaviour
+public class MechanicQuestDialogue : MonoBehaviour
 {
     [Header("==== Conversation ====")]
     [Space(10)]
@@ -20,16 +18,12 @@ public class NPCDialogue : MonoBehaviour
     private Dialogue dialogue;
     private LastDialogue lastDialogue;
     private int index = 0;
-    public bool dialogueCompleted = false;
+    public bool dialogueQuestCompleted = false;
     public bool lastDialogueAvailable = false;
-    [Header("==== Quests ====")]
-    [Space(10)]
-    public MechanicGuestList mechanicGuests;
-
 
     public void StartDialogue()
     {
-        if (!dialogueCompleted)
+        if (!dialogueQuestCompleted)
         {
             interactWithNPC.isInteracting = true;
             SetDialogue(conversation[0]);
@@ -39,7 +33,7 @@ public class NPCDialogue : MonoBehaviour
             DisplayNextSentence();
         }
 
-        if (dialogueCompleted)
+        if (dialogueQuestCompleted)
         {
             interactWithNPC.isInteracting = true;
             SetLastDialogue(lastConversation[0]);
@@ -78,12 +72,10 @@ public class NPCDialogue : MonoBehaviour
         Time.timeScale = 1f;
         dialogueBox.SetActive(false);
         index = 0;
-        dialogueCompleted = true;
+        dialogueQuestCompleted = true;
         lastDialogueAvailable = true;
         interactWithNPC.isInteracting = false;
         Debug.Log("Koniec Dialogu");
-        //mechanicGuest
-        MechanicQuestComplete();
     }
 
     public void DisplayLastSentance()
@@ -102,24 +94,4 @@ public class NPCDialogue : MonoBehaviour
             EndDialogue();
         }
     }
-
-    private void MechanicQuestComplete()
-    {
-        if (dialogueCompleted)
-        {
-            if (mechanicGuests.hammer != null && mechanicGuests.crossbar != null && mechanicGuests.chisel != null)
-            {
-                mechanicGuests.hammer.SetActive(true);
-                mechanicGuests.crossbar.SetActive(true);
-                mechanicGuests.chisel.SetActive(true);
-            }
-        }
-    }
-}
-[System.Serializable]
-public class MechanicGuestList
-{
-    public GameObject hammer;
-    public GameObject crossbar;
-    public GameObject chisel;
 }

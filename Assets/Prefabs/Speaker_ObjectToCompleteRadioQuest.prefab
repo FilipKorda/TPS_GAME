@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1908585445755338628}
   - component: {fileID: 1908585445755338629}
   - component: {fileID: 1908585445755338631}
+  - component: {fileID: 310069882}
   m_Layer: 0
   m_Name: Speaker_ObjectToCompleteRadioQuest
-  m_TagString: Untagged
+  m_TagString: Speaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1908585445755338629
 SpriteRenderer:
@@ -101,3 +102,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &310069882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908585445755338626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13966c6239038c9438cdc38a4b90795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Press E to Pick Up Speakers
+  descriptionText: {fileID: 0}
+  descriptionTextObjectName: Press 'E' to teleport
