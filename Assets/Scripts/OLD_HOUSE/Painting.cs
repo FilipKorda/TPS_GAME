@@ -8,6 +8,7 @@ public class Painting : MonoBehaviour
     private bool canPick = false;
     public string description = "Press E to Open Safe";
     public TextMeshProUGUI descriptionText;
+    public OldHouseGuestList oldHouseGuestList;
 
 
 
@@ -16,6 +17,8 @@ public class Painting : MonoBehaviour
         if (canPick && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("zabierasz malowid³o");
+            oldHouseGuestList.oldMen.SetActive(false);
+            oldHouseGuestList.oldWomen.SetActive(true);
             Destroy(gameObject);
         }
     }
@@ -37,4 +40,11 @@ public class Painting : MonoBehaviour
             descriptionText.text = "";
         }
     }
+}
+[System.Serializable]
+public class OldHouseGuestList
+{
+    public GameObject oldWomen;
+    public GameObject oldMen;
+
 }
