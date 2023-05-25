@@ -11,10 +11,6 @@ public class NPCDialogue : MonoBehaviour
     public List<Dialogue> conversation = new();
     [Header("==== Conversation ====")]
     [Space(10)]
-    public List<AfterYesAswer> afterYesAswer = new();
-    public List<AfterNoAswer> AfterYesAswer = new();
-    [Header("==== Conversation ====")]
-    [Space(10)]
     public List<LastDialogue> lastConversation = new();
     [Header("==== Others ====")]
     [Space(10)]
@@ -64,11 +60,6 @@ public class NPCDialogue : MonoBehaviour
             dialogueManager.dialogueText.text = dialogue.sentences;
             index++;
 
-            if (dialogue.isQuestion)
-            {
-                dialogueManager.DisplayQuestion(dialogue.questions[0]);
-                return;
-            }
         }
         else
         {

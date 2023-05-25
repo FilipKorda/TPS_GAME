@@ -1300,36 +1300,23 @@ MonoBehaviour:
   conversation:
   - name: Obca Kobieta
     portrait: {fileID: 21300000, guid: e5cae375dad467f44b2c4aeef4b5d463, type: 3}
-    sentences: Hej, Jak sie czujesz?
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Bardzo dobrze, wiesz co\u015B o miejscu zwanym lochami?"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Obca Kobieta
     portrait: {fileID: 21300000, guid: e5cae375dad467f44b2c4aeef4b5d463, type: 3}
-    sentences: "Strasznie dziwne miejsce, pe\u0142no potwor\xF3w czai si\u0119 w
-      tam! Boje si\u0119 tam wchodzi\u0107!"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Julia
     portrait: {fileID: 21300000, guid: e5cae375dad467f44b2c4aeef4b5d463, type: 3}
-    sentences: "A tak wog\xF3le nazywam si\u0119 Julia."
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Mi\u0142o mi, ale chyba jednak zdecyduj\u0119 si\u0119 tam wej\u015B\u0107"
-    isQuestion: 0
-    questions: []
-  afterYesAswer: []
-  AfterYesAswer: []
+    sentences: 
   lastConversation:
   - lastName: Julia
     lastPortrait: {fileID: 21300000, guid: e5cae375dad467f44b2c4aeef4b5d463, type: 3}
-    lastSentences: Powodzenia w lochach!
+    lastSentences: 
   dialogueManager: {fileID: 428619898}
   interactWithNPC: {fileID: 1979009784}
   dialogueBox: {fileID: 159455984}
@@ -4261,19 +4248,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 204481585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 428619898}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: StartAfterNoAnswerDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &204481585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10108,19 +10083,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 443361976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 428619898}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: StartAfterYesAnswerDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &443361976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20655,40 +20618,26 @@ MonoBehaviour:
   conversation:
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Czesc, zatrzymaj si\u0119!"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Chcesz mi co\u015B powiedze\u0107? Jestem tutaj nowy!"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ben
     portrait: {fileID: 21300000, guid: 6f711544a7dabfa46bcbb20766586344, type: 3}
-    sentences: "Witaj, nazywam si\u0119 Ben."
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ben
     portrait: {fileID: 21300000, guid: 6f711544a7dabfa46bcbb20766586344, type: 3}
-    sentences: "Niedaleko st\u0105d jest twoje mieszkanie. Udaj si\u0119 tam!"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ben
     portrait: {fileID: 21300000, guid: 6f711544a7dabfa46bcbb20766586344, type: 3}
-    sentences: "Ale uwa\u017Caj bo co\u015B tam sie dzieje!"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ben
     portrait: {fileID: 21300000, guid: 6f711544a7dabfa46bcbb20766586344, type: 3}
-    sentences: "Widzia\u0142em jak kto\u015B tam wchodzi\u0142 i do teraz nie wyszed\u0142."
-    isQuestion: 0
-    questions: []
-  afterYesAswer: []
-  AfterYesAswer: []
+    sentences: 
   lastConversation:
   - lastName: Ben
     lastPortrait: {fileID: 21300000, guid: 6f711544a7dabfa46bcbb20766586344, type: 3}
-    lastSentences: "Wszystko ju\u017C wiesz, \u017Cegnam!"
+    lastSentences: 
   dialogueManager: {fileID: 428619898}
   interactWithNPC: {fileID: 1979009784}
   dialogueBox: {fileID: 159455984}
@@ -24420,35 +24369,23 @@ MonoBehaviour:
   conversation:
   - name: Tajemniczy Facet
     portrait: {fileID: 21300000, guid: 6d384e798b62e4d42b646cfe4f3f675a, type: 3}
-    sentences: "Nie moge uwierzy\u0107 zgubi\u0142em klucz\u0119!!!!"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Tajemniczy Facet
     portrait: {fileID: 21300000, guid: 6d384e798b62e4d42b646cfe4f3f675a, type: 3}
-    sentences: "Nie moge wej\u015B\u0107 do Banku Miasta."
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Tajemniczy Facet
     portrait: {fileID: 21300000, guid: 6d384e798b62e4d42b646cfe4f3f675a, type: 3}
-    sentences: Znajdz je to ciebie wynagrodze!
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Nie martw si\u0119, znajde te klucze ale powiedz mi jak sie nazywasz?"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Biznesmen
     portrait: {fileID: 21300000, guid: 6d384e798b62e4d42b646cfe4f3f675a, type: 3}
-    sentences: "Mo\u017Cesz m\xF3wi\u0107 mi Biznesmen."
-    isQuestion: 0
-    questions: []
-  afterYesAswer: []
-  AfterYesAswer: []
+    sentences: 
   lastConversation:
   - lastName: Biznesmen
     lastPortrait: {fileID: 21300000, guid: 6d384e798b62e4d42b646cfe4f3f675a, type: 3}
-    lastSentences: "Gdzie s\u0105 moje klucz, zgubi\u0142em je!"
+    lastSentences: 
   dialogueManager: {fileID: 428619898}
   interactWithNPC: {fileID: 1979009784}
   dialogueBox: {fileID: 159455984}
@@ -37996,31 +37933,20 @@ MonoBehaviour:
   conversation:
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Czesc, kim jeste\u015B?"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Doctor
     portrait: {fileID: 21300000, guid: 2ec9bc584279362488f15b4e2ae51054, type: 3}
-    sentences: Hej jestem Doktorem tego miasteczka.
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Doctor
     portrait: {fileID: 21300000, guid: 2ec9bc584279362488f15b4e2ae51054, type: 3}
-    sentences: "Posiadam sw\xF3j szpital niedalko!"
-    isQuestion: 0
-    questions: []
+    sentences: 
   - name: Doctor
     portrait: {fileID: 21300000, guid: 2ec9bc584279362488f15b4e2ae51054, type: 3}
-    sentences: "Jak chcesz to mo\u017Cesz kierowa\u0107 si\u0119 na po\u0142udnie,
-      to go znajdziesz."
-    isQuestion: 0
-    questions: []
-  afterYesAswer: []
-  AfterYesAswer: []
+    sentences: 
   lastConversation:
   - lastName: Doctor
     lastPortrait: {fileID: 21300000, guid: 2ec9bc584279362488f15b4e2ae51054, type: 3}
-    lastSentences: Bywaj!
+    lastSentences: 
   dialogueManager: {fileID: 428619898}
   interactWithNPC: {fileID: 1979009784}
   dialogueBox: {fileID: 159455984}
@@ -46606,200 +46532,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1979009784}
     - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: AfterYesAswer.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswer.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: AfterYesAswer.Array.data[0].Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswer.Array.data[0].Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterNoAswerConversation.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: AfterYesAswer.Array.data[0].Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswer.Array.data[0].Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswerConversation.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
       propertyPath: conversation.Array.data[1].sentences
-      value: "Obraz jest dla mnie bardzo wa\u017Cny!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].sentences
-      value: "Obraz jest dla mnie bardzo wa\u017Cny!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: AfterYesAswer.Array.data[0].Sentences
-      value: asdgadsfgasdfgadsfga
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswer.Array.data[0].Sentences
-      value: adgfasdfgadg
+      value: ale bardzo potrzebuje tego obrazu
       objectReference: {fileID: 0}
     - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
       propertyPath: conversation.Array.data[1].isQuestion
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].isQuestion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterNoAswerConversation.Array.data[0].Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswerConversation.Array.data[0].Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterNoAswerConversation.Array.data[0].Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].questions.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterNoAswerConversation.Array.data[0].Sentences
-      value: "Ohhh bardzo ci dzi\u0119kuje"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswerConversation.Array.data[0].Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: afterYesAswerConversation.Array.data[0].Sentences
-      value: Bede go dalej szukac moze ja go znajde
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[1].Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].questions.Array.data[0].Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].question
-      value: Masz ten obraz?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[1].Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[1].question
-      value: Masz ten obraz?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].questions.Array.data[0].Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].questions.Array.data[0].question
-      value: Masz ten obraz?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].afterNoAnswer.Name
-      value: OldWomen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].answers.Array.size
+      propertyPath: conversation.Array.data[1].choices.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[1].answers.Array.size
-      value: 2
+      propertyPath: conversation.Array.data[1].sentences.Array.size
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].questions.Array.data[0].answers.Array.size
-      value: 2
+      propertyPath: conversation.Array.data[1].choices.Array.data[0]
+      value: "wyb\xF3r jeden"
       objectReference: {fileID: 0}
     - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].afterYesAnswer.Name
-      value: OldWomen
+      propertyPath: conversation.Array.data[1].choices.Array.data[1]
+      value: "wyb\xF3r drugi"
       objectReference: {fileID: 0}
     - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].afterNoAnswer.Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].afterNoAnswer.Sentences
-      value: asdgadsfgasdfgadsfga
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].afterYesAnswer.Portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].afterYesAnswer.Sentences
-      value: adgfasdfgadg
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].answers.Array.data[0].answer
-      value: "NIe uda\u0142o mi sie go znale\u017C\u0107 "
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[0].answers.Array.data[1].answer
-      value: "Uda\u0142o mi sie go znale\u017C\u0107 "
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[1].answers.Array.data[0].answer
-      value: "NIe uda\u0142o mi sie go znale\u017C\u0107 "
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[1].questions.Array.data[1].answers.Array.data[1].answer
-      value: "Uda\u0142o mi sie go znale\u017C\u0107 "
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].questions.Array.data[0].answers.Array.data[0].answer
-      value: "NIe uda\u0142o mi sie go znale\u017C\u0107 "
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907190434644154622, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
-      propertyPath: conversation.Array.data[2].questions.Array.data[0].answers.Array.data[1].answer
-      value: "Uda\u0142o mi sie go znale\u017C\u0107 "
+      propertyPath: conversation.Array.data[1].sentences.Array.data[0]
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 4907190434644154623, guid: 9c62bac45e80c344e8d8686f51fc96cb, type: 3}
       propertyPath: player

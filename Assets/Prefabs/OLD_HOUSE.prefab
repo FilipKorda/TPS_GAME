@@ -3837,19 +3837,9 @@ MonoBehaviour:
   - name: OldWomen
     portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
     sentences: "Nie wiem co ci Oldman powiedzia\u0142, ale"
-    isQuestion: 0
   - name: OldWomen
     portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    sentences: Masz ten obraz?
-    isQuestion: 1
-  conversationYES:
-  - Name: JA
-    Portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    Sentences: tak mam
-  conversationNO:
-  - Name: JA
-    Portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    Sentences: Nie, nie mam
+    sentences: Pytanie?
   lastConversation:
   - lastName: JA
     lastPortrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
@@ -5432,31 +5422,23 @@ MonoBehaviour:
   - name: OldMan
     portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
     sentences: "NIe pamietam gdzie schowa\u0142em moje malowid\u0142lo."
-    isQuestion: 0
   - name: OldMan
     portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
     sentences: "Wieki temu je schowa\u0142em gdzies w tym domu."
-    isQuestion: 0
   - name: OldMan
     portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
     sentences: "Obraz mo\u017Ce by\u0107 wsz\u0119dzie nawet w \u015Bcianch ale jestem
       za s\u0142aby rozwali\u0107 dom i znale\u017C\u0107 malowid\u0142o."
-    isQuestion: 0
   - name: ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
     sentences: "Co masz na my\u015Bli m\xF3wi\u0105c w scianch?"
-    isQuestion: 0
   - name: OldMan
     portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
     sentences: "Schowa\u0142em malodwid\u0142o miedzy \u015Bcianami bo jest bardzo
       cenne dla mnie i nie chce \u017Ceby kto\u015B je ukrad\u0142!"
-    isQuestion: 0
   - name: OldMan
     portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
     sentences: "Gdzie jest moje malowid\u0142o?!?!?"
-    isQuestion: 0
-  conversationYES: []
-  conversationNO: []
   lastConversation:
   - lastName: Oldman
     lastPortrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
