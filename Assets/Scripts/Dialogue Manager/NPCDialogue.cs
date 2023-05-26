@@ -1,31 +1,31 @@
-using System;
 using System.Collections.Generic;
-using System.Reflection;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class NPCDialogue : MonoBehaviour
 {
     [Header("==== Conversation ====")]
     [Space(10)]
-    public List<Dialogue> conversation = new();
-    [Header("==== Conversation ====")]
+    public List<Dialogue> conversation = new List<Dialogue>();
+
+    [Header("==== Last Conversation ====")]
     [Space(10)]
-    public List<LastDialogue> lastConversation = new();
+    public List<LastDialogue> lastConversation = new List<LastDialogue>();
+
     [Header("==== Others ====")]
     [Space(10)]
     public DialogueManager dialogueManager;
     public InteractWithNPC interactWithNPC;
     public GameObject dialogueBox;
+
     private Dialogue dialogue;
     private LastDialogue lastDialogue;
     private int index = 0;
     public bool dialogueCompleted = false;
     public bool lastDialogueAvailable = false;
+
     [Header("==== Quests ====")]
     [Space(10)]
     public MechanicGuestList mechanicGuests;
-
 
     public void StartDialogue()
     {
@@ -46,10 +46,10 @@ public class NPCDialogue : MonoBehaviour
             dialogueManager.StartLastDialogue(lastDialogue);
             Time.timeScale = 0f;
             dialogueBox.SetActive(true);
-            DisplayLastSentance();
+            DisplayLastSentence();
         }
-
     }
+
     public void DisplayNextSentence()
     {
         if (index < conversation.Count)
@@ -57,9 +57,9 @@ public class NPCDialogue : MonoBehaviour
             dialogue = conversation[index];
             dialogueManager.characterNameText.text = dialogue.name;
             dialogueManager.portraitImage.sprite = dialogue.portrait;
-            dialogueManager.dialogueText.text = dialogue.sentences;
-            index++;
+            dialogueManager.dialogueText.text = string.Join("\n", dialogue.sentences);
 
+            index++;
         }
         else
         {
@@ -71,10 +71,12 @@ public class NPCDialogue : MonoBehaviour
     {
         this.dialogue = dialogue;
     }
+
     public void SetLastDialogue(LastDialogue lastDialogue)
     {
         this.lastDialogue = lastDialogue;
     }
+
     public void EndDialogue()
     {
         Time.timeScale = 1f;
@@ -83,20 +85,18 @@ public class NPCDialogue : MonoBehaviour
         dialogueCompleted = true;
         lastDialogueAvailable = true;
         interactWithNPC.isInteracting = false;
-        Debug.Log("Koniec Dialogu");
-        //mechanicGuest
         MechanicQuestComplete();
     }
 
-    public void DisplayLastSentance()
+    public void DisplayLastSentence()
     {
-
         if (index < lastConversation.Count)
         {
             lastDialogue = lastConversation[index];
             dialogueManager.characterNameText.text = lastDialogue.lastName;
             dialogueManager.portraitImage.sprite = lastDialogue.lastPortrait;
-            dialogueManager.dialogueText.text = lastDialogue.lastSentences;
+            dialogueManager.dialogueText.text = string.Join("\n", lastDialogue.lastSentences);
+
             index++;
         }
         else
@@ -118,6 +118,7 @@ public class NPCDialogue : MonoBehaviour
         }
     }
 }
+
 [System.Serializable]
 public class MechanicGuestList
 {
@@ -125,3 +126,5 @@ public class MechanicGuestList
     public GameObject crossbar;
     public GameObject chisel;
 }
+
+

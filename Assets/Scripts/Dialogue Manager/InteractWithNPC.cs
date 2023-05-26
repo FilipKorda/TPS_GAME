@@ -9,28 +9,41 @@ public class InteractWithNPC : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
     public string descriptionInteract = "Press E to interact with NPC";
     public bool isInteracting = false;
-    [SerializeField] private Dialogue dialogue;
 
     void Update()
     {
-        InteractWithNpcc();
+        InteractWithNpc();
     }
 
-    private void InteractWithNpcc()
+    private void InteractWithNpc()
     {
-
         if (Input.GetKeyDown(interactKey))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, canInteractWithNPC, layerMask);
-            if (hit.collider != null)
+            NPC npc = hit.collider.GetComponent<NPC>();
+
+            if (npc != null)
             {
-                NPCDialogue npcDialogue = hit.collider.GetComponent<NPCDialogue>();
-                if (npcDialogue != null)
+                if (npc.areChoicesAvailable && isInteracting)
                 {
-                    npcDialogue.StartDialogue();
+                    Debug.Log("Musisz wybraæ!");
+                }
+                else if (isInteracting)
+                {
+                    if (npc.isDialogueComplete)
+                        npc.DisplayFinalDialogue();
+                    else
+                        npc.NextDialogue();
+                }
+                else
+                {
+                    npc.StartDialogue();
+                    isInteracting = true;
                 }
             }
         }
     }
+
+
 
 }

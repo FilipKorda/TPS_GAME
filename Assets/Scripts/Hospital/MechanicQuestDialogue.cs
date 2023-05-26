@@ -51,7 +51,8 @@ public class MechanicQuestDialogue : MonoBehaviour
             dialogue = conversation[index];
             dialogueManager.characterNameText.text = dialogue.name;
             dialogueManager.portraitImage.sprite = dialogue.portrait;
-            dialogueManager.dialogueText.text = dialogue.sentences;
+            dialogueManager.dialogueText.text = string.Join("\n", dialogue.sentences);
+
             index++;
         }
         else
@@ -75,7 +76,6 @@ public class MechanicQuestDialogue : MonoBehaviour
         dialogueQuestCompleted = true;
         lastDialogueAvailable = true;
         interactWithNPC.isInteracting = false;
-        Debug.Log("Koniec Dialogu");
     }
 
     public void DisplayLastSentance()
@@ -86,7 +86,8 @@ public class MechanicQuestDialogue : MonoBehaviour
             lastDialogue = lastConversation[index];
             dialogueManager.characterNameText.text = lastDialogue.lastName;
             dialogueManager.portraitImage.sprite = lastDialogue.lastPortrait;
-            dialogueManager.dialogueText.text = lastDialogue.lastSentences;
+            dialogueManager.dialogueText.text = string.Join("\n", lastDialogue.lastSentences);
+
             index++;
         }
         else
