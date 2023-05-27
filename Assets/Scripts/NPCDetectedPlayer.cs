@@ -11,7 +11,7 @@ public class NPCDetectedPlayer : MonoBehaviour
     public Transform player;
     public bool inRangeToInteract = false;
     [SerializeField] private InteractWithNPC interactWithNPC;
-    [SerializeField] private NPCDialogue nPCDialogue;
+    [SerializeField] private NPC nPCDialogue;
 
 
     private void Update()
@@ -47,7 +47,7 @@ public class NPCDetectedPlayer : MonoBehaviour
             interactPrompt.SetActive(false);
             interactWithNPC.interactText.text = "";
         }
-        if (nPCDialogue.dialogueCompleted)
+        if (nPCDialogue.isDialogueComplete)
         {
             interactPrompt.SetActive(false);
         }

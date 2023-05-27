@@ -1,5 +1,190 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &25934678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 25934679}
+  - component: {fileID: 25934681}
+  - component: {fileID: 25934680}
+  - component: {fileID: 25934682}
+  - component: {fileID: 25934683}
+  m_Layer: 8
+  m_Name: OldWomen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &25934679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.77, y: -1.71, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 132702825}
+  m_Father: {fileID: 4907190432844321680}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &25934681
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934678}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!58 &25934680
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934678}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.31999996
+--- !u!114 &25934682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: OldWomen
+    portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
+    sentences: aaaaaaa
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  - name: OldWomen
+    portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
+    sentences: bbbbbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  - name: OldWomen
+    portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
+    sentences: ccccccc
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  - name: Pytanie
+    portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
+    sentences: To jest pyytanie
+    buttonsAnswers:
+    - mam
+    - nie mam
+    afterAnswerIndexes: 0400000005000000
+  - name: 4
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: "mega si\u0119 ciesze! dziekuje"
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  - name: 5
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: "No nic to poszukam jeszcze sama, mo\u017Ce znajde"
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: drzwi
+    portrait: {fileID: 21300000, guid: 3c83bb3ca1fdc454a84c7253b78053a6, type: 3}
+    sentences: zawsze tu beda
+  - name: drzwi
+    portrait: {fileID: 21300000, guid: 3c83bb3ca1fdc454a84c7253b78053a6, type: 3}
+    sentences: zawsze tu beda x2
+  - name: drzwi
+    portrait: {fileID: 21300000, guid: 3c83bb3ca1fdc454a84c7253b78053a6, type: 3}
+    sentences: zawsze tu beda x3
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
+--- !u!114 &25934683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToShowPromptAboveHead: 5
+  distanceToInteractWithPlayer: 0.5
+  interactPrompt: {fileID: 132702824}
+  player: {fileID: 0}
+  inRangeToInteract: 0
+  interactWithNPC: {fileID: 0}
+  nPCDialogue: {fileID: 25934682}
 --- !u!1 &93778735
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +428,90 @@ MonoBehaviour:
   delay: 5
   progressBar: {fileID: 0}
   destroyingText: {fileID: 0}
+--- !u!1 &132702824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132702825}
+  - component: {fileID: 132702826}
+  m_Layer: 8
+  m_Name: ExclamationMark (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &132702825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132702824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 25934679}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &132702826
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132702824}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: fb492c3e99af0764ba044fabcc33412f, type: 3}
+  m_Color: {r: 1, g: 0.8258381, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &138996116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,90 +1847,6 @@ MonoBehaviour:
   delay: 5
   progressBar: {fileID: 0}
   destroyingText: {fileID: 0}
---- !u!1 &588100376
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 588100377}
-  - component: {fileID: 588100378}
-  m_Layer: 8
-  m_Name: ExclamationMark (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &588100377
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588100376}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 896799083}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &588100378
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588100376}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fb492c3e99af0764ba044fabcc33412f, type: 3}
-  m_Color: {r: 1, g: 0.8258381, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &610456133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,161 +3883,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &896799081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 896799083}
-  - component: {fileID: 896799082}
-  - component: {fileID: 896799084}
-  - component: {fileID: 4907190434644154621}
-  - component: {fileID: 4907190434644154622}
-  m_Layer: 8
-  m_Name: OldWomen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &896799083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896799081}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.86, y: -2.81, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 588100377}
-  m_Father: {fileID: 4907190432844321680}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &896799082
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896799081}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!58 &896799084
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896799081}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.31999996
---- !u!114 &4907190434644154621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896799081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15aeeecc8f1091e4685b8c20bd485c5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToShowPromptAboveHead: 10
-  distanceToInteractWithPlayer: 0.5
-  interactPrompt: {fileID: 588100376}
-  player: {fileID: 0}
-  inRangeToInteract: 0
-  interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 4907190434644154622}
---- !u!114 &4907190434644154622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896799081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: OldWomen
-    portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    sentences: "Nie wiem co ci Oldman powiedzia\u0142, ale"
-  - name: OldWomen
-    portrait: {fileID: 21300000, guid: 8d0ee970443a5e046b6fb7d9187a2251, type: 3}
-    sentences: Pytanie?
-  lastConversation:
-  - lastName: JA
-    lastPortrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    lastSentences: Dowidzenia
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  mechanicGuests:
-    hammer: {fileID: 0}
-    crossbar: {fileID: 0}
-    chisel: {fileID: 0}
 --- !u!1 &915075760
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,8 +5343,8 @@ GameObject:
   - component: {fileID: 1357785262}
   - component: {fileID: 1357785261}
   - component: {fileID: 1357785263}
-  - component: {fileID: 4907190434644154615}
   - component: {fileID: 4907190434644154623}
+  - component: {fileID: 860563087}
   m_Layer: 8
   m_Name: OldMan
   m_TagString: Untagged
@@ -5406,56 +5436,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31999996
---- !u!114 &4907190434644154615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357785260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: OldMan
-    portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
-    sentences: "NIe pamietam gdzie schowa\u0142em moje malowid\u0142lo."
-  - name: OldMan
-    portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
-    sentences: "Wieki temu je schowa\u0142em gdzies w tym domu."
-  - name: OldMan
-    portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
-    sentences: "Obraz mo\u017Ce by\u0107 wsz\u0119dzie nawet w \u015Bcianch ale jestem
-      za s\u0142aby rozwali\u0107 dom i znale\u017C\u0107 malowid\u0142o."
-  - name: ja
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Co masz na my\u015Bli m\xF3wi\u0105c w scianch?"
-  - name: OldMan
-    portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
-    sentences: "Schowa\u0142em malodwid\u0142o miedzy \u015Bcianami bo jest bardzo
-      cenne dla mnie i nie chce \u017Ceby kto\u015B je ukrad\u0142!"
-  - name: OldMan
-    portrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
-    sentences: "Gdzie jest moje malowid\u0142o?!?!?"
-  lastConversation:
-  - lastName: Oldman
-    lastPortrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
-    lastSentences: "Poszukaj czego\u015B w domu czym mo\u017Cesz niszczy\u0107 \u015Bciany!"
-  - lastName: Oldman
-    lastPortrait: {fileID: 21300000, guid: dcbbcf6a273079945b9f10f3c98ac45c, type: 3}
-    lastSentences: "Zniszcz \u015Bciany w domu i znajdz obraz i mi go przynies to
-      ciebie wynagrodz\u0119!"
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  mechanicGuests:
-    hammer: {fileID: 0}
-    crossbar: {fileID: 0}
-    chisel: {fileID: 0}
 --- !u!114 &4907190434644154623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5474,7 +5454,36 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 4907190434644154615}
+  nPCDialogue: {fileID: 860563087}
+--- !u!114 &860563087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357785260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &1387965444
 GameObject:
   m_ObjectHideFlags: 0
@@ -6190,7 +6199,7 @@ MonoBehaviour:
   description: Press E to Take Painting
   descriptionText: {fileID: 0}
   oldHouseGuestList:
-    oldWomen: {fileID: 896799081}
+    oldWomen: {fileID: 0}
     oldMen: {fileID: 1357785260}
 --- !u!1 &1481641939
 GameObject:
@@ -10059,9 +10068,9 @@ Transform:
   - {fileID: 4907190433124015305}
   - {fileID: 4907190433276883818}
   - {fileID: 1627382983}
-  - {fileID: 896799083}
   - {fileID: 1481641942}
   - {fileID: 1725173791}
+  - {fileID: 25934679}
   m_Father: {fileID: 4907190434354470389}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

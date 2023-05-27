@@ -3,18 +3,22 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    [Header("==== Conversation ====")]
+    [Header("==== Start Conversation ====")]
     [Space(10)]
     public List<DialogueData> dialogueData = new();
     private int dialogueIndex = 0;
-    [Header("==== Conversation ====")]
+    [Header("==== Final Conversation ====")]
     [Space(10)]
     public List<FinalDialogueData> finalDialogueData = new();
-    private int finalDialogueIndex = 0;   
+    private int finalDialogueIndex = 0;
     private BetterDialogueManager betterDialogueManager;
     public InteractWithNPC interactWithNPC;
     public bool areChoicesAvailable;
     public bool isDialogueComplete = false;
+
+    [Header("==== Quests ====")]
+    [Space(10)]
+    public MechanicQuest mechanicGuests;
 
     private void Start()
     {
@@ -23,25 +27,40 @@ public class NPC : MonoBehaviour
 
     public void StartDialogue()
     {
-        if (dialogueData.Count > 0)
+        if (!isDialogueComplete)
+        {
+            if (dialogueData.Count > 0)
+            {
+                Time.timeScale = 0f;
+                interactWithNPC.isInteracting = true;
+                betterDialogueManager.dialogueBox.SetActive(true);
+                dialogueIndex = 0;
+                DisplayDialogue(dialogueData[dialogueIndex]);
+            }
+        }
+        else
         {
             Time.timeScale = 0f;
             interactWithNPC.isInteracting = true;
             betterDialogueManager.dialogueBox.SetActive(true);
-            dialogueIndex = 0;
-            DisplayDialogue(dialogueData[dialogueIndex]);
+            finalDialogueIndex = 0;
+            DisplayFinalDialogue(finalDialogueData[finalDialogueIndex]);
+        }
+    }
 
-            if (dialogueData[dialogueIndex].buttonsAnswers != null && dialogueData[dialogueIndex].buttonsAnswers.Count > 0)
-            {
-                betterDialogueManager.SetDialogue(dialogueData[dialogueIndex].name, dialogueData[dialogueIndex].portrait,
-                    dialogueData[dialogueIndex].sentences, dialogueData[dialogueIndex], this);
-            }
-        }
-        if(isDialogueComplete)
+    public void NextFinalDialogue()
+    {
+        finalDialogueIndex++;
+        if (finalDialogueIndex < finalDialogueData.Count)
         {
-            DisplayFinalDialogue();
+            betterDialogueManager.SetFinalDialogue(finalDialogueData[finalDialogueIndex].name, finalDialogueData[finalDialogueIndex].portrait,
+                 finalDialogueData[finalDialogueIndex].sentences, finalDialogueData[finalDialogueIndex]);
+            DisplayFinalDialogue(finalDialogueData[finalDialogueIndex]);
         }
-        
+        else
+        {
+            EndDialogue();
+        }
     }
 
     public void NextDialogue()
@@ -49,24 +68,23 @@ public class NPC : MonoBehaviour
         dialogueIndex++;
         if (dialogueIndex < dialogueData.Count)
         {
-            // Sprawdzenie, czy s¹ dostêpne wybory
-            if (dialogueData[dialogueIndex].buttonsAnswers != null && dialogueData[dialogueIndex].buttonsAnswers.Count > 0)
+            DisplayDialogue(dialogueData[dialogueIndex]);
+
+            if (!dialogueData[dialogueIndex].isQuestion)
             {
-                // Przekazanie informacji o danych dialogowych i skrypcie NPC do BetterDialogueManager
-                betterDialogueManager.SetDialogue(dialogueData[dialogueIndex].name, dialogueData[dialogueIndex].portrait,
-                    dialogueData[dialogueIndex].sentences, dialogueData[dialogueIndex], this);
-                areChoicesAvailable = true;
+                areChoicesAvailable = false;
+
+                if (dialogueIndex == dialogueData.Count - 2 || dialogueIndex == dialogueData.Count - 1)
+                {
+                    if (!areChoicesAvailable)
+                    {
+                        EndDialogue();
+                    }
+                }
             }
             else
             {
-                DisplayDialogue(dialogueData[dialogueIndex]);
-                areChoicesAvailable = false;
-
-                // Sprawdzenie, czy to jest przedostatni lub ostatni dialog i koñczy dialog
-                if (dialogueIndex == dialogueData.Count - 2 || dialogueIndex == dialogueData.Count - 1)
-                {
-                    EndDialogue();
-                }
+                areChoicesAvailable = true;
             }
         }
         else
@@ -74,6 +92,8 @@ public class NPC : MonoBehaviour
             EndDialogue();
         }
     }
+
+
 
     public void EndDialogue()
     {
@@ -82,33 +102,37 @@ public class NPC : MonoBehaviour
         interactWithNPC.isInteracting = false;
         isDialogueComplete = true;
 
-
-    }
-    public void DisplayFinalDialogue()
-    {
-        if (finalDialogueIndex < finalDialogueData.Count)
-        {
-            FinalDialogueData selectedFinalDialogue = finalDialogueData[finalDialogueIndex];
-            betterDialogueManager.SetDialogue(selectedFinalDialogue.name, selectedFinalDialogue.portrait,
-                selectedFinalDialogue.sentences, selectedFinalDialogue);
-
-            finalDialogueIndex++;
-        }
-        else
-        {
-            EndDialogue();
-        }
+        //MechanicQuest
+        MechanicQuestComplete();
     }
 
     public void OnPlayerChoiceMade(int choiceIndex)
     {
         dialogueIndex = dialogueData[dialogueIndex].afterAnswerIndexes[choiceIndex];
         DisplayDialogue(dialogueData[dialogueIndex]);
-    }   
+    }
 
     private void DisplayDialogue(DialogueData data)
     {
         betterDialogueManager.SetDialogue(data.name, data.portrait, data.sentences, data, this);
+        areChoicesAvailable = data.buttonsAnswers != null && data.buttonsAnswers.Count > 0;
     }
 
+    private void DisplayFinalDialogue(FinalDialogueData data)
+    {
+        betterDialogueManager.SetFinalDialogue(data.name, data.portrait, data.sentences, data);
+    }
+
+    private void MechanicQuestComplete()
+    {
+        if (isDialogueComplete)
+        {
+            if (mechanicGuests.hammer != null && mechanicGuests.crossbar != null && mechanicGuests.chisel != null)
+            {
+                mechanicGuests.hammer.SetActive(true);
+                mechanicGuests.crossbar.SetActive(true);
+                mechanicGuests.chisel.SetActive(true);
+            }
+        }
+    }
 }

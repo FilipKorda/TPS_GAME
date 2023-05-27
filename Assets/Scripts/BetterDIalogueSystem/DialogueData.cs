@@ -12,6 +12,7 @@ public class DialogueData
 
     public List<string> buttonsAnswers;
     public List<int> afterAnswerIndexes;
+    public bool isQuestion;
 }
 
 [System.Serializable]

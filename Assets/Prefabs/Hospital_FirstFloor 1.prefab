@@ -11899,9 +11899,9 @@ GameObject:
   - component: {fileID: 1311949487}
   - component: {fileID: 1311949486}
   - component: {fileID: 1311949488}
-  - component: {fileID: 1311949489}
   - component: {fileID: 1771335549}
   - component: {fileID: 1771335550}
+  - component: {fileID: 1487743533}
   m_Layer: 8
   m_Name: Hospital_Nurse
   m_TagString: Untagged
@@ -11995,37 +11995,6 @@ MonoBehaviour:
   speed: 2
   waitTime: 6
   avoidanceRadius: 0.3
---- !u!114 &1311949489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311949485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: Pielegniarka
-    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Ten szpital mnie przera\u017Ca!"
-  - name: Pielegniarka
-    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Nie przychodz\u0105 nowi pajcieci! Ciekawe jaka jest przyczyna tego?"
-  lastConversation:
-  - lastName: Pielegniarka
-    lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    lastSentences: "Ci\u0105gle musze pracowa\u0107"
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  hammer: {fileID: 0}
-  crossbar: {fileID: 0}
-  chisel: {fileID: 0}
 --- !u!114 &1771335549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12044,7 +12013,7 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 1311949489}
+  nPCDialogue: {fileID: 1487743533}
 --- !u!58 &1771335550
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12061,6 +12030,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &1487743533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311949485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &1318607745
 GameObject:
   m_ObjectHideFlags: 0
@@ -14097,9 +14095,9 @@ GameObject:
   - component: {fileID: 1575835798}
   - component: {fileID: 1575835800}
   - component: {fileID: 1575835799}
-  - component: {fileID: 1575835801}
   - component: {fileID: 347703341}
   - component: {fileID: 347703342}
+  - component: {fileID: 802680506}
   m_Layer: 8
   m_Name: Hospital_Nurse 4
   m_TagString: Untagged
@@ -14195,39 +14193,6 @@ MonoBehaviour:
   speed: 2
   waitTime: 4
   avoidanceRadius: 0.5
---- !u!114 &1575835801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575835797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: Pielegniarka
-    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Pilnuje tego miejsaca i zajmuje sie pacj\u0119tami! Ale jest ich
-      zdecydowanie mniej ni\u017C wcze\u015Bniej."
-  - name: Pielegniarka
-    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Przeszuka\u0142e\u015B ju\u017C ca\u0142y szpital? Pono\u0107 Radio
-      na dachu nie dzia\u0142a!"
-  lastConversation:
-  - lastName: Pielegniarka
-    lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    lastSentences: Dowidzenia
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  hammer: {fileID: 0}
-  crossbar: {fileID: 0}
-  chisel: {fileID: 0}
 --- !u!114 &347703341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14246,7 +14211,7 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 1575835801}
+  nPCDialogue: {fileID: 802680506}
 --- !u!58 &347703342
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14263,6 +14228,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &802680506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575835797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &1604283647
 GameObject:
   m_ObjectHideFlags: 0
@@ -15651,9 +15645,9 @@ GameObject:
   - component: {fileID: 1745853790}
   - component: {fileID: 1745853789}
   - component: {fileID: 1745853791}
-  - component: {fileID: 1745853792}
   - component: {fileID: 1079886757}
   - component: {fileID: 1079886758}
+  - component: {fileID: 509573592}
   m_Layer: 8
   m_Name: Hospital_Nurse 3
   m_TagString: Untagged
@@ -15748,37 +15742,6 @@ MonoBehaviour:
   speed: 2
   waitTime: 4
   avoidanceRadius: 0.3
---- !u!114 &1745853792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745853788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: Pielegniarka
-    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Chodze sobie po prostu! Bo nie wiem co robi\u0107!"
-  - name: Pielegniarka
-    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Od kiedy Radio nie dzia\u0142a to jest zdecydowanie mniej pacj\u0119t\xF3w!"
-  lastConversation:
-  - lastName: Pielegniarka
-    lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    lastSentences: Bywaj!
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  hammer: {fileID: 0}
-  crossbar: {fileID: 0}
-  chisel: {fileID: 0}
 --- !u!114 &1079886757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15797,7 +15760,7 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 1745853792}
+  nPCDialogue: {fileID: 509573592}
 --- !u!58 &1079886758
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15814,6 +15777,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &509573592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745853788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &1746126868
 GameObject:
   m_ObjectHideFlags: 0
@@ -19985,9 +19977,9 @@ GameObject:
   - component: {fileID: 2118860964}
   - component: {fileID: 2118860963}
   - component: {fileID: 2118860965}
-  - component: {fileID: 2118860966}
   - component: {fileID: 227164080}
   - component: {fileID: 227164081}
+  - component: {fileID: 1231302415}
   m_Layer: 8
   m_Name: Hospital_Nurse2
   m_TagString: Untagged
@@ -20081,34 +20073,6 @@ MonoBehaviour:
   speed: 1
   waitTime: 3
   avoidanceRadius: 0.3
---- !u!114 &2118860966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118860962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: Pielegniarka
-    portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Jestem  zajeta swoj\u0105 prac\u0105!"
-  lastConversation:
-  - lastName: Pielegniarka
-    lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    lastSentences: "Jestem  bardzo zajeta swoj\u0105 prac\u0105!"
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  hammer: {fileID: 0}
-  crossbar: {fileID: 0}
-  chisel: {fileID: 0}
 --- !u!114 &227164080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20127,7 +20091,7 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 2118860966}
+  nPCDialogue: {fileID: 1231302415}
 --- !u!58 &227164081
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20144,6 +20108,40 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &1231302415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118860962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: ccc
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &2127584379
 GameObject:
   m_ObjectHideFlags: 0
@@ -20909,7 +20907,7 @@ Transform:
   - {fileID: 1745853790}
   - {fileID: 1575835798}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2471857634450518289
 GameObject:

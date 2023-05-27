@@ -1680,7 +1680,7 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 588566364}
+  nPCDialogue: {fileID: 0}
 --- !u!1 &440532471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,33 +2088,39 @@ MonoBehaviour:
   conversation:
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Witaj, tutaj jest odzia\u0142 intensywnej terapi."
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Ludzie kt\xF3rzy wracaja z loch\xF3w badzo czesto tutaj trafiaj\u0105"
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Ma\u0142o kogo da sie uratowa\u0107. Obra\u017Cenia s\u0105 zbyt
-      powa\u017Cne!"
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Przeszuka\u0142es juz ten ca\u0142y szpital? Ogromny labirynt z nigo!"
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Bardzo mnie to smuci, mam nadzieje \u017Ce ja tak nie sko\u0144cze!"
+    sentences: []
+    isQuestion: 0
+    choices: []
   lastConversation:
   - lastName: Hospital Nurse
     lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    lastSentences: Dowidzenia.
+    lastSentences: []
+    choices: []
   dialogueManager: {fileID: 0}
   interactWithNPC: {fileID: 0}
   dialogueBox: {fileID: 0}
   dialogueCompleted: 0
   lastDialogueAvailable: 0
-  mechanicGuests:
-    hammer: {fileID: 0}
-    crossbar: {fileID: 0}
-    chisel: {fileID: 0}
 --- !u!1 &640879991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,36 +3570,44 @@ MonoBehaviour:
   conversation:
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: WItaj w szpitalu!
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Opatrujemy tutaj rannych kt\xF3rzy ledwo co wr\xF3cili z loch\xF3w!"
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: Szpital jest ogromny, nie zgub sie w nim!
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Hospital Nurse
     portrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    sentences: "Szpital skrywa wiele sekret\xF3w! Chcesz sie przekona\u0107 jakie
-      to s\u0105 sekrety?"
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Hmmm, oczywiscie \u017Ce tak, rozejrze sie tutaj."
+    sentences: []
+    isQuestion: 0
+    choices: []
   - name: Ja
     portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Przeszukam ca\u0142y szpital i przekonwam sie jakie to s\u0105 sekrety!"
+    sentences: []
+    isQuestion: 0
+    choices: []
   lastConversation:
   - lastName: Hospital Nurse
     lastPortrait: {fileID: 21300000, guid: 85dc37c358925a2488e542bf2cfa6fc4, type: 3}
-    lastSentences: Bywaj
+    lastSentences: []
+    choices: []
   dialogueManager: {fileID: 0}
   interactWithNPC: {fileID: 0}
   dialogueBox: {fileID: 0}
   dialogueCompleted: 0
   lastDialogueAvailable: 0
-  mechanicGuests:
-    hammer: {fileID: 0}
-    crossbar: {fileID: 0}
-    chisel: {fileID: 0}
 --- !u!1 &1012767116
 GameObject:
   m_ObjectHideFlags: 0
@@ -12839,6 +12853,7 @@ GameObject:
   - component: {fileID: 434993671020949083}
   - component: {fileID: 434993671020949060}
   - component: {fileID: 1823264540}
+  - component: {fileID: 1430501262}
   m_Layer: 8
   m_Name: Hospital_Nurse
   m_TagString: Untagged
@@ -12933,7 +12948,36 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 1008948221}
+  nPCDialogue: {fileID: 1430501262}
+--- !u!114 &1430501262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434993671020949062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &434993671027240082
 GameObject:
   m_ObjectHideFlags: 0

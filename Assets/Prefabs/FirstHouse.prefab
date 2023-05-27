@@ -3623,8 +3623,8 @@ GameObject:
   - component: {fileID: 7453829873161192287}
   - component: {fileID: 7453829873161192272}
   - component: {fileID: 7453829873161192285}
-  - component: {fileID: 7453829873161192284}
   - component: {fileID: 8652357692439761929}
+  - component: {fileID: 906064263}
   m_Layer: 8
   m_Name: NPC (1)
   m_TagString: Untagged
@@ -3716,59 +3716,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &7453829873161192284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7453829873161192273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: Ty
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: Witaj, opowiesz mi  o tym miejscu?
-  - name: Nieznajomy
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Nazywam si\u0119 Luke i jaki\u015B nieznajomy sie kr\u0119ci po moim
-      mieszkniu! Boj\u0119 si\u0119!"
-  - name: Luke
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Podaje si\u0119 za mojego brata i nie wiem co robi\u0107! Nie ufaj
-      mu!"
-  - name: Ty
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Ale powiedz mi co\u015B o tym miesjcu, ledwo co sie obudzi\u0142em
-      i nie wiem o co  chodzi!"
-  - name: Luke
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Nie ma czasu do stracenia idz do loch\xF3w i sam si\u0119 przekonaj!"
-  - name: Luke
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Kieruj si\u0119 na p\xF3\u0142noc gdy ju\u017C wyjdziesz z mieszkania!"
-  - name: Luke
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Tam zacznie si\u0119 twoja przygoda!"
-  - name: Ty
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Dobrze, zatem p\xF3jd\u0119 to loch\xF3w, dowidzenia!"
-  lastConversation:
-  - lastName: Luke
-    lastPortrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    lastSentences: Bywaj!
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  mechanicGuests:
-    hammer: {fileID: 0}
-    crossbar: {fileID: 0}
-    chisel: {fileID: 0}
 --- !u!114 &8652357692439761929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3787,7 +3734,36 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 7453829873161192284}
+  nPCDialogue: {fileID: 906064263}
+--- !u!114 &906064263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453829873161192273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &7453829874019784749
 GameObject:
   m_ObjectHideFlags: 0
@@ -7383,8 +7359,8 @@ GameObject:
   - component: {fileID: 8652357693642144966}
   - component: {fileID: 8652357693642144969}
   - component: {fileID: 8652357693642144964}
-  - component: {fileID: 8652357693642144965}
   - component: {fileID: 7453829874095106960}
+  - component: {fileID: 27649495}
   m_Layer: 8
   m_Name: NPC
   m_TagString: Untagged
@@ -7476,60 +7452,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8652357693642144965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8652357693642144968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: Ty
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Hej, kim jeste\u015B?"
-  - name: Ty
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Mam wiele pyta\u0144!"
-  - name: Nieznajomy
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: Witaj, nazywam sie Szpieg!
-  - name: Szpieg
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: Jakie masz paytania?
-  - name: Ty
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: Co to jest za miejsce?
-  - name: Szpieg
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Zapomnaine, opuszczone miejsce zwane {XxX}, w mie\u015Bcie jest bezpiecznie!"
-  - name: Szpieg
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Lecz znajduj\u0105 sie te\u017C lochy do kt\xF3rych si\u0119 nie
-      zbli\u017Caj!"
-  - name: Szpieg
-    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    sentences: "Pe\u0142no tam niebiezpiecznych stwor\xF3w!! Uwa\u017Caj na siebie!"
-  - name: Ty
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: "Dzi\u0119ki, bywaj!"
-  lastConversation:
-  - lastName: Szpieg
-    lastPortrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
-    lastSentences: Nic tu wiecej nie znajdziesz, idz stad!!!
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  mechanicGuests:
-    hammer: {fileID: 0}
-    crossbar: {fileID: 0}
-    chisel: {fileID: 0}
 --- !u!114 &7453829874095106960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7548,7 +7470,36 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 8652357693642144965}
+  nPCDialogue: {fileID: 27649495}
+--- !u!114 &27649495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8652357693642144968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: aaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: bbbbb
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: aaaa
+    portrait: {fileID: 21300000, guid: 0009f1107b2840340a2410a08ac98049, type: 3}
+    sentences: aaaa
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 0}
+    crossbar: {fileID: 0}
+    chisel: {fileID: 0}
 --- !u!1 &8652357693801659365
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,19 +23,22 @@ public class BetterDialogueManager : MonoBehaviour
         currentDialogueData = dialogueData;
         currentNPC = npc;
 
-        if (dialogueData.buttonsAnswers != null && dialogueData.buttonsAnswers.Count > 0)
+        if (dialogueData.isQuestion)
         {
-            choiceButtonsPanel.SetActive(true);
-            for (int i = 0; i < choiceButtons.Length; i++)
+            if (dialogueData.buttonsAnswers != null && dialogueData.buttonsAnswers.Count > 0)
             {
-                if (i < dialogueData.buttonsAnswers.Count)
+                choiceButtonsPanel.SetActive(true);
+                for (int i = 0; i < choiceButtons.Length; i++)
                 {
-                    choiceButtons[i].gameObject.SetActive(true);
-                    choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = dialogueData.buttonsAnswers[i];
-                }
-                else
-                {
-                    choiceButtons[i].gameObject.SetActive(false);
+                    if (i < dialogueData.buttonsAnswers.Count)
+                    {
+                        choiceButtons[i].gameObject.SetActive(true);
+                        choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = dialogueData.buttonsAnswers[i];
+                    }
+                    else
+                    {
+                        choiceButtons[i].gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -45,14 +48,14 @@ public class BetterDialogueManager : MonoBehaviour
         }
     }
 
-    public void SetDialogue(string name, Sprite portrait, string sentences, FinalDialogueData finalDialogueData)
+
+    public void SetFinalDialogue(string name, Sprite portrait, string sentences, FinalDialogueData finalDialogueData)
     {
         nameText.text = name;
         portraitImage.sprite = portrait;
         dialogueText.text = sentences;
         currentFinalDialogueData = finalDialogueData;
 
-        // Wy³¹cz panel wyboru odpowiedzi
         choiceButtonsPanel.SetActive(false);
     }
 

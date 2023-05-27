@@ -1880,8 +1880,8 @@ GameObject:
   - component: {fileID: 874482813}
   - component: {fileID: 874482812}
   - component: {fileID: 874482814}
-  - component: {fileID: 874482816}
   - component: {fileID: 874482815}
+  - component: {fileID: 1326197548}
   m_Layer: 8
   m_Name: NPC_Mechanic
   m_TagString: Untagged
@@ -1973,65 +1973,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31999996
---- !u!114 &874482816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874482811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ec0b785b88044a9a29da0725c4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - name: JA
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: Czesc
-  - name: Mechanik
-    portrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    sentences: "Hej, mam problem nie moge naprawic radia bo nie mam narz\u0119dzi!"
-  - name: Mechanik
-    portrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    sentences: "Potrzebuje narzedzi zeby zdoby\u0107 materia\u0142y ze skrzy\u0144
-      kt\xF3re s\u0105 na dachu"
-  - name: Mechanik
-    portrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    sentences: "Jak ju\u017C zdobede materia\u0142y ze skrzy\u0144 to zdo\u0142am
-      naprawi\u0107 radio!"
-  - name: Ja
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: Spokojnie, znajde te narzedzia i naprawie radio za ciebie.
-  - name: Ja
-    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
-    sentences: Gdzie moge znalezc te narzedzia?
-  - name: Mechanik
-    portrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    sentences: "W drodze na dach zgubi\u0142em je w szpitalu, nie wiem gdzie ich
-      szukac."
-  lastConversation:
-  - lastName: Mechanik
-    lastPortrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    lastSentences: "Do rozwalnia skrzy\u0144 potrzebujesz:"
-  - lastName: Mechanik
-    lastPortrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    lastSentences: Mlota, Lomu i Dluta!
-  - lastName: Mechanik
-    lastPortrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    lastSentences: 'A do naprawy radio potrzebujesz:'
-  - lastName: Mechanik
-    lastPortrait: {fileID: 21300000, guid: 8dada1380f452e34b926ca56ead2b580, type: 3}
-    lastSentences: "\u015Arub, kabli, glosnik\xF3w, kol zebatych"
-  dialogueManager: {fileID: 0}
-  interactWithNPC: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  dialogueCompleted: 0
-  lastDialogueAvailable: 0
-  mechanicGuests:
-    hammer: {fileID: 965878003}
-    crossbar: {fileID: 539712420}
-    chisel: {fileID: 408071949}
 --- !u!114 &874482815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2050,7 +1991,36 @@ MonoBehaviour:
   player: {fileID: 0}
   inRangeToInteract: 0
   interactWithNPC: {fileID: 0}
-  nPCDialogue: {fileID: 874482816}
+  nPCDialogue: {fileID: 1326197548}
+--- !u!114 &1326197548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874482811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae42fe1a482fff469f802dadb4aa822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - name: JA
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: siema
+    buttonsAnswers: []
+    afterAnswerIndexes: 
+  finalDialogueData:
+  - name: JA
+    portrait: {fileID: 21300000, guid: 053bdb6868931ba408c6da902e31b8cc, type: 3}
+    sentences: siema
+  interactWithNPC: {fileID: 0}
+  areChoicesAvailable: 0
+  isDialogueComplete: 0
+  mechanicGuests:
+    hammer: {fileID: 965878003}
+    crossbar: {fileID: 539712420}
+    chisel: {fileID: 408071949}
 --- !u!1 &881447929
 GameObject:
   m_ObjectHideFlags: 0
@@ -8005,7 +7975,7 @@ Transform:
   - {fileID: 408071951}
   - {fileID: 539712423}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7239114311750868286
 GameObject:
